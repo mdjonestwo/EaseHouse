@@ -3,8 +3,16 @@ $(document).ready(function(){
 
 
     $("td").click(function(){
-      var redbground = $(this).toggleClass("red")
-      return redbground
+      var redbground = $(this).addClass("red")
+      
+      
+      if(redbground && confirm("Do you want to add a pallet here?") ){
+        var pNameQuant = prompt("Enter product name and quantity.")
+        console.log(pNameQuant)
+      } else {
+        alert("You have no products to add.")
+      }
+
       }); 
   
       $("#dryCooler").on("click", function () {
