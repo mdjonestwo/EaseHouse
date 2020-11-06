@@ -1,54 +1,33 @@
-$(document).ready(function(){
-    var td = $("td")
+$(document).ready(function () {
 
+  $("td").click(function () {
+    //  var redbground = $(this).addClass("red")
+    $("#addPalletModal").toggleClass("is-active");
 
-    $("td").click(function(){
-      var redbground = $(this).addClass("red")
-      var addPalletModal = $("#addPalletModal").toggleClass("is-active")
-      /*
-      if(redbground && confirm("Do you want to add a pallet here?") ){
-        var pNameQuant = prompt("Enter product name and quantity.")
-        console.log(pNameQuant)
+    //No Selector on Pallet Modal
+    $("#noModal").click(function () {
+      $("#addPalletModal").removeClass("is-active");
+    });
+
+    // Yes button on Pallet Modal
+    $("#yesModal").click(function () {
+      $("#addPalletModal").removeClass("is-active");
+      $("#palletDescriptionModal").addClass("is-active");
+    });
+
+    //Submit Description
+    $("#submitBtn").click(function () {
+      if ($("#palletinfo").val() === "") {
+        alert("Please enter a description");
       } else {
-        alert("You have no products to add.")
-        $(this).addClass("beige")
+        console.log($("#palletinfo").val());
+        return $(this).addClass("red");
       }
-      }); 
-  
-      $("#dryCooler").on("click", function () {
-        $("#dryCoolerLayout").toggleClass("is-hidden");
-        $("#dryCooler").toggleClass("has-text-grey");
-      });
-  
-      $("#trailer").on("click", function () {
-        $("#trailerLayout").toggleClass("is-hidden");
-        $("#trailer").toggleClass("has-text-grey");
-      });
-      */
-     return redbground, addPalletModal
-  })
-//No Selector on Pallet Modal
-  $("#noModal").click(function(){
-    $("#addPalletModal").removeClass("is-active")
-  })
+    });
 
-// Yes button on Pallet Modal 
-  $("#yesModal").click(function(){
-    $("#addPalletModal").removeClass("is-active")
-    $("#palletDescriptionModal").addClass("is-active")
-  })
-
-  $("#submitBtn").click(function(){
-    
-    if($("#palletinfo").val() === ""){
-      alert("Please enter a description")
-    } else {
-      console.log($("#palletinfo").val())
-    }
-  })
-
-  $("#closeBtn").click(function(){
-    $("#palletDescriptionModal").removeClass("is-active")
-  })
-
-}); 
+    //Close Description
+    $("#closeBtn").click(function () {
+      $("#palletDescriptionModal").removeClass("is-active");
+    });
+  });
+});
