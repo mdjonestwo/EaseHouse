@@ -38,4 +38,17 @@ $(document).ready(function(){
     $("#palletDescriptionModal").addClass("is-active")
   })
 
+  $("#submitBtn").click(function(){
+    
+    if($("#palletinfo").val() === ""){
+      alert("Please enter a description")
+    } else {
+      console.log($("#palletinfo").val())
+    }
+  })
+
+  $("#closeBtn").click(function(){
+    $("#palletDescriptionModal").removeClass("is-active")
+  })
+
 }); 
