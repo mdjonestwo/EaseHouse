@@ -27,8 +27,15 @@ $(document).ready(function(){
       */
      return redbground, addPalletModal
   })
-
-  $("#modalClose").click(function(){
+//No Selector on Pallet Modal
+  $("#noModal").click(function(){
     $("#addPalletModal").removeClass("is-active")
   })
+
+// Yes button on Pallet Modal 
+  $("#yesModal").click(function(){
+    $("#addPalletModal").removeClass("is-active")
+    $("#palletDescriptionModal").addClass("is-active")
+  })
+
 }); 
