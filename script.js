@@ -20,4 +20,8 @@ $(document).ready(function(){
         $("#dryCooler").toggleClass("has-text-grey");
       });
       
+      $("#trailer").on("click", function () {
+        $("#trailerLayout").toggleClass("is-hidden");
+        $("#trailer").toggleClass("has-text-grey");
+      });
   }); 
