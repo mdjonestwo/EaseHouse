@@ -6,11 +6,13 @@ $(document).ready(function(){
       var redbground = $(this).addClass("red")
       
       
+      
       if(redbground && confirm("Do you want to add a pallet here?") ){
         var pNameQuant = prompt("Enter product name and quantity.")
         console.log(pNameQuant)
       } else {
         alert("You have no products to add.")
+        $(this).addClass("beige")
       }
 
       }); 
