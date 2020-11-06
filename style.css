@@ -1,9 +1,5 @@
 td {
-    border: 1px solid #dbdbdb;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
+    text-align: center;
     background-color: beige;
 }
 
