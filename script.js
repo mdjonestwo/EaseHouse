@@ -15,7 +15,7 @@ var palletDescription = $("#palletDescriptionModal")
 
 
   $("td").click(function () {
-    if($("#palletinfo").val()) {
+  if($("#palletinfo").val()) {
       $(this).addClass("red")
   } else {
 
@@ -42,6 +42,8 @@ var palletDescription = $("#palletDescriptionModal")
       } else {
         $("#addedDetz").removeClass("is-hidden")
       }
+
+      
     });
 
     //Back Button
