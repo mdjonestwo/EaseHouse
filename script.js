@@ -1,26 +1,22 @@
 $(document).ready(function () {
-
-var td = $("td")
-var initialPalletModal = $("#initialPalletModal")
-var addPallet = $("#yesModal")
-var closeWindow = $("#noModal")
-var palletDetails = $("#palletDetails")
-var backBtn = $("#backBtn")
-var closeBtn = $("#closeBtn")
-var submitBtn = $("#submitBtn")
-var addPalletModal = $("#addPalletDescriptionModal")
-var currentDetails = $("#currentDetails")
-var palletDescription = $("#palletDescriptionModal")
-
-
+  var td = $("td");
+  var initialPalletModal = $("#initialPalletModal");
+  var addPallet = $("#yesModal");
+  var closeWindow = $("#noModal");
+  var palletDetails = $("#palletDetails");
+  var backBtn = $("#backBtn");
+  var closeBtn = $("#closeBtn");
+  var submitBtn = $("#submitBtn");
+  var addPalletModal = $("#addPalletDescriptionModal");
+  var currentDetails = $("#currentDetails");
+  var palletDescription = $("#palletDescriptionModal");
 
   $("td").click(function () {
-  if($("#palletinfo").val()) {
-      $(this).addClass("red")
-  } else {
-
-  }
-    //var redbground = $(this).addClass("red")
+    if ($("#palletinfo").val()) {
+      $(this).addClass("red");
+    } else {
+    }
+    
     initialPalletModal.toggleClass("is-active");
 
     //Close button on Pallet Mod. Modal
@@ -33,29 +29,15 @@ var palletDescription = $("#palletDescriptionModal")
       initialPalletModal.removeClass("is-active");
       addPalletModal.addClass("is-active");
     });
-
-    //Submit Description 
-   submitBtn.click(function () {
-      if ($("#palletinfo").val() === "") {
-        alert("Please enter a description");
-        $("#addedDetz").addClass("is-hidden")
-      } else {
-        $("#addedDetz").removeClass("is-hidden")
-      }
-
-      
-    });
-
     //Back Button
     $("#backBtn").click(function () {
       $("#addPalletDescriptionModal").removeClass("is-active");
-      initialPalletModal.addClass("is-active")
-    })
-  
-
+      initialPalletModal.addClass("is-active");
+    });
     //Close Description
     $("#closeBtn").click(function () {
       $("#addPalletDescriptionModal").removeClass("is-active");
     });
   });
 });
+

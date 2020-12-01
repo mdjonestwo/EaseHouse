@@ -638,12 +638,11 @@
             </table>
           </div>
         </div>
-        <!--Wet Cooler Layout-->
-        
-
         <div class="column"></div>
       </div>
     </div>
+
+
     <!--Initial Pallet Modal-->
     <div class="modal" id="initialPalletModal">
       <div class="modal-background"></div>
@@ -678,16 +677,37 @@
           <div class="title">Pallet Space:<span>ID</span></div>
           <div class="block">
             <strong>Add Details</strong>
-            <br>
-            <b>Example:</b><i> ProductName/Unit/Quantity/Julian</i>
           </div>              
-          <div class="block">
-            <textarea class="textarea" id="palletinfo" placeholder="ProductName/Unit/Quantity/Julian"></textarea>
-          </div>
+          <form action="">
+            <div class="field">
+              <label>Product</label>
+              <div class="control">
+                <input class="input" id="productForm" type="text" placeholder="ex: Sweet Potatoes">
+              </div>
+            </div>
+              <div class="field">
+                <label>Unit</label>
+                <div class="control">
+                  <input class="input" id="unitForm" type="text" placeholder="ex: 40lbs">
+                </div>
+              </div>
+                <div class="field">
+                  <label>Quantity</label>
+                  <div class="control">
+                    <input class="input" id="quantityForm" type="text" placeholder="ex: 56">
+                  </div>
+                </div>
+                  <div class="field">
+                    <label>Julian</label>
+                    <div class="control">
+                      <input class="input" id="julianForm" type="text" placeholder="ex: 321">
+                    </div>
+                  </div>
+          </form>
           <div class="level">
             <div class="level-left">
               <div class="level-item">
-                <i class="is-hidden has-text-success" id="addedDetz">Space Submitted</i>
+                <i class="is-hidden has-text-success" id="spaceSubmitResponse">Space Submitted</i>
               </div>
             </div>
           </div>
@@ -712,7 +732,7 @@
               </div>
             </div>
           </div>
-<!--Pallet Space ID Details-->
+<!--Pallet Description Modal-->
           <div class="modal" id="palletDescriptionModal">
             <div class="modal-background"></div>
             <div class="modal-content">
@@ -739,8 +759,7 @@
                     <div class="level-item">
                       <button class="button" id="closeBtn">Close</button>
                     </div>
-                  </div>
-                  
+                  </div>                  
                 </div>
                     </div>
                   </div>
