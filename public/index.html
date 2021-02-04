@@ -4,11 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Happy Dirt Coolers</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-    />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="/style.css" />
+ 
   </head>
   <body>
     <nav
@@ -18,10 +17,10 @@
       style="height: 75"
     >
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <a class="navbar-item" href="#">
           <img
             src="./assets/imgs/happydirtlogo.jpg"
-            alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+            alt="Happy Dirt"
             width="112"
             height="75"
           />
@@ -656,13 +655,13 @@
             <div class="level-left"><div class="level-item"></div></div>
             <div class="level-right">
               <div class="level-item">
-                <button class="button" id="yesModal">Add</button>
+                <button class="button" id="addDescription">Add</button>
               </div>
               <div class="level-item">
                 <button class="button" id="palletDetails">Details</button>
               </div>
               <div class="level-item">
-                <button class="button" id="noModal">Close</button>
+                <button class="button" id="closeInitial">Close</button>
               </div>
             </div>
           </div>
@@ -694,13 +693,13 @@
                 <div class="field">
                   <label>Quantity</label>
                   <div class="control">
-                    <input class="input" id="quantityForm" type="text" placeholder="ex: 56">
+                    <input class="input" id="quantityForm" type="number" placeholder="ex: 56">
                   </div>
                 </div>
                   <div class="field">
                     <label>Julian</label>
                     <div class="control">
-                      <input class="input" id="julianForm" type="text" placeholder="ex: 321">
+                      <input class="input" id="julianForm" type="number" placeholder="ex: 321">
                     </div>
                   </div>
           </form>
@@ -773,5 +772,5 @@
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"
   ></script>
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </html>
