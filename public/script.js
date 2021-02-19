@@ -1,4 +1,18 @@
-//const { response } = require("express");
+function add_pallet(pallet) {
+  var settings = {
+    url: "localhost:3001/api/cooler",
+    method: "POST",
+    timeout: 0,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: JSON.stringify(pallet),
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
 
 $(document).ready(function () {
   var td = $("td");
@@ -45,16 +59,17 @@ $(document).ready(function () {
     $("#addPalletDescriptionModal").removeClass("is-active");
   });
 
+  //Pallet Schema
+  let palletadd = {
+    Product: $("#productForm").val(),
+    Unit: $("#unitForm").val(),
+    Quantity: $("#quantityForm").val(),
+    Julian: $("#julianForm").val(),
+  };
+
   //Submit Button
-  /*
   submitBtn.click(function () {
-    $.ajax({
-      url: "/",
-      method: "POST",
-      data: new PalletInfo(pallet, unit, quantity, julian),
-    }).then((response) => {
-      console.log(response);
-    });
+    add_pallet(palletadd);
+    console.log(palletadd);
   });
-  */
 });

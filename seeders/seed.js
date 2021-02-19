@@ -20,13 +20,13 @@ let palletSeed = [
   },
 ];
 
-db.Pallet.deleteMany({})
-  .then(() => db.Pallet.insertMany(palletSeed))
-  .then((data) => {
-    console.log(data.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+// db.Pallet.deleteMany({})
+//   .then(() => db.Pallet.insertMany(palletSeed))
+//   .then((data) => {
+//     console.log(data.length + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
