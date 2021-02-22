@@ -3,9 +3,13 @@ const db = require("../models");
 module.exports = (app) => {
   //GET ROUTE
   app.get("/api/cooler", (req, res) => {
-    db.Pallet.find({}).then((response) => {
-      res.json(response);
-    });
+    db.Pallet.find({})
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
   });
 
   //POST ROUTE
