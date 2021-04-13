@@ -29,30 +29,31 @@ $(document).ready(function () {
   var palletDescription = $("#palletDescriptionModal");
   var modal = $(".modal");
 
-  //Pallet Schema
-  function palletFunction(event) {
-    let palletadd = {
-      Product: $("#productForm").val(),
-      Unit: $("#unitForm").val(),
-      Quantity: $("#quantityForm").val(),
-      Julian: $("#julianForm").val(),
-      Location: "71",
-    };
-
-    return palletadd;
-  }
-
   //Change selected <td> cell color to red
   $("td").click(function (event) {
-    console.log(event);
-    $(this).addClass("red");
-  });
+    let location = $(this).attr("id");
 
-  //Submit Button on addPalletDesciptionModal
-  submitBtn.click(function (event) {
-    const palletadd = palletFunction(event);
-    add_pallet(palletadd);
-    console.log(palletadd);
+    $(this).addClass("red");
+
+    //Pallet Schema
+    function palletFunction(event) {
+      let palletadd = {
+        Product: $("#productForm").val(),
+        Unit: $("#unitForm").val(),
+        Quantity: $("#quantityForm").val(),
+        Julian: $("#julianForm").val(),
+        Location: location,
+      };
+
+      return palletadd;
+    }
+
+    //Submit Button on addPalletDesciptionModal
+    submitBtn.click(function (event) {
+      const palletadd = palletFunction(event);
+      add_pallet(palletadd);
+      console.log(palletadd);
+    });
   });
 
   //Open initalPalletModal
