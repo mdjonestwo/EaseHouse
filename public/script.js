@@ -1,3 +1,19 @@
+//Adding pallet to database
+function add_pallet(pallet) {
+  console.log("works");
+  var settings = {
+    url: "/api/cooler",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: JSON.stringify(pallet),
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
 //JQuery DOM manipulation
 $(document).ready(function () {
   var td = $("td");
@@ -13,9 +29,30 @@ $(document).ready(function () {
   var palletDescription = $("#palletDescriptionModal");
   var modal = $(".modal");
 
+  //Pallet Schema
+  function palletFunction(event) {
+    let palletadd = {
+      Product: $("#productForm").val(),
+      Unit: $("#unitForm").val(),
+      Quantity: $("#quantityForm").val(),
+      Julian: $("#julianForm").val(),
+      Location: "71",
+    };
+
+    return palletadd;
+  }
+
   //Change selected <td> cell color to red
-  $("td").click(function () {
+  $("td").click(function (event) {
+    console.log(event);
     $(this).addClass("red");
+  });
+
+  //Submit Button on addPalletDesciptionModal
+  submitBtn.click(function (event) {
+    const palletadd = palletFunction(event);
+    add_pallet(palletadd);
+    console.log(palletadd);
   });
 
   //Open initalPalletModal
@@ -41,34 +78,4 @@ $(document).ready(function () {
   $("#closeBtn").click(function () {
     $("#addPalletDescriptionModal").removeClass("is-active");
   });
-
-  // Adding pallet to database
-  function add_pallet(pallet) {
-    var settings = {
-      url: "localhost:3001/api/cooler",
-      method: "POST",
-      timeout: 0,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify(pallet),
-    };
-
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-    });
-  }
-  //Submit Button on addPalletDesciptionModal
-  submitBtn.click(function () {
-    add_pallet(palletadd);
-    console.log(palletadd);
-  });
-
-  //Pallet Schema
-  let palletadd = {
-    Product: $("#productForm").val(),
-    Unit: $("#unitForm").val(),
-    Quantity: $("#quantityForm").val(),
-    Julian: $("#julianForm").val(),
-  };
 });

@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PalletSchema = new Schema({
-  day: Date,
+  Day: {
+    type: Date,
+    default: Date.now,
+  },
   Product: {
     type: String,
   },
@@ -14,6 +17,9 @@ const PalletSchema = new Schema({
   },
   Julian: {
     type: Number,
+  },
+  Location: {
+    type: String,
   },
 });
 

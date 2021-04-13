@@ -3,6 +3,7 @@ const db = require("../models");
 module.exports = (app) => {
   //GET ROUTE
   app.get("/api/cooler", (req, res) => {
+    console.log("Get");
     db.Pallet.find({})
       .then((response) => {
         res.json(response);
@@ -14,6 +15,7 @@ module.exports = (app) => {
 
   //POST ROUTE
   app.post("/api/cooler", (req, res) => {
+    console.log("hey");
     db.Pallet.create(req.body)
       .then((response) => {
         res.json(response);
