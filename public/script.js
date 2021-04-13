@@ -31,7 +31,9 @@ $(document).ready(function () {
 
   //Change selected <td> cell color to red
   $("td").click(function (event) {
-    let location = $(this).attr("id");
+    let locationTxt = $(this).text();
+    let location = $(this).attr("id", locationTxt);
+    console.log(location);
 
     $(this).addClass("red");
 
@@ -42,10 +44,15 @@ $(document).ready(function () {
         Unit: $("#unitForm").val(),
         Quantity: $("#quantityForm").val(),
         Julian: $("#julianForm").val(),
-        Location: location,
+        Location: location.attr("id"),
       };
 
       return palletadd;
+    }
+
+    //Clear Form Function
+    function clearForm() {
+      $(".input").val("");
     }
 
     //Submit Button on addPalletDesciptionModal
@@ -53,6 +60,7 @@ $(document).ready(function () {
       const palletadd = palletFunction(event);
       add_pallet(palletadd);
       console.log(palletadd);
+      clearForm();
     });
   });
 
