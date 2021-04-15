@@ -125,23 +125,9 @@ $(document).ready(function () {
 
   //Open initalPalletModal
   td.click(function () {
-    initialPalletModal.toggleClass("is-active");
-  });
-  //Close initialPalletModal
-  closeWindow.click(function () {
-    initialPalletModal.removeClass("is-active");
-  });
-  // Add Pallet button on initialPalletModal
-  addPallet.click(function () {
-    initialPalletModal.removeClass("is-active");
     addPalletModal.addClass("is-active");
   });
 
-  //Back Button on addPalletDescriptionModal
-  $("#backBtn").click(function () {
-    $("#addPalletDescriptionModal").removeClass("is-active");
-    initialPalletModal.addClass("is-active");
-  });
   //Close Button on addPalletDescriptionModal
   $("#closeBtn").click(function () {
     $("#addPalletDescriptionModal").removeClass("is-active");
