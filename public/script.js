@@ -14,6 +14,63 @@ function add_pallet(pallet) {
     console.log(response);
   });
 }
+
+//GET pallet
+function getPallet(location) {
+  var settings = {
+    url: "/api/cooler/" + location,
+    method: "GET",
+  };
+
+  $.ajax(settings).done(function (response) {
+    // console.log(response.Product);
+    if (!response) {
+      $("#productForm").val("");
+      $("#unitForm").val("");
+      $("#quantityForm").val("");
+      $("#julianForm").val("");
+    } else {
+      $("#productForm").val(response.Product);
+      $("#unitForm").val(response.Unit);
+      $("#quantityForm").val(response.Quantity);
+      $("#julianForm").val(response.Julian);
+    }
+  });
+}
+
+//GET Pallets
+function getAll() {
+  var settings = {
+    url: "/api/cooler/",
+    method: "GET",
+  };
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+    var oneMore;
+
+    response.filter(function (pallet) {
+      oneMore = pallet.Location;
+      console.log(pallet.Location);
+    });
+
+    $("#table td").each(function () {
+      console.log($(this));
+      $(this)
+        .find("td")
+        .each(function () {
+          //do your stuff, you can use $(this) to get current cell
+          //console.log($(this));
+          var foo = $(this);
+          if ($(this)[0].id === oneMore) {
+            console.log("hey");
+            console.log(foo);
+          }
+        });
+    });
+  });
+}
 //JQuery DOM manipulation
 $(document).ready(function () {
   var td = $("td");
@@ -34,8 +91,11 @@ $(document).ready(function () {
     let locationTxt = $(this).text();
     let location = $(this).attr("id", locationTxt);
     console.log(location);
+    getPallet(location[0].id);
 
     $(this).addClass("red");
+
+    function fillInputs() {}
 
     //Pallet Schema
     function palletFunction(event) {
@@ -49,18 +109,17 @@ $(document).ready(function () {
 
       return palletadd;
     }
-
     //Clear Form Function
     function clearForm() {
       $(".input").val("");
     }
 
+    //Filling Form
+
     //Submit Button on addPalletDesciptionModal
     submitBtn.click(function (event) {
       const palletadd = palletFunction(event);
       add_pallet(palletadd);
-      console.log(palletadd);
-      clearForm();
     });
   });
 

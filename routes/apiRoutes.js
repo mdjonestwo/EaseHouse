@@ -1,10 +1,21 @@
 const db = require("../models");
 
 module.exports = (app) => {
-  //GET ROUTE
-  app.get("/api/cooler", (req, res) => {
+  //GET ONE PALLET ROUTE
+  app.get("/api/cooler/:location", (req, res) => {
     console.log("Get");
-    db.Pallet.find({})
+    db.Pallet.findOne({ Location: req.params.location })
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
+
+  //GET ALL PALLETS ROUTE
+  app.get("/api/cooler/", (req, res) => {
+    db.Pallet.find()
       .then((response) => {
         res.json(response);
       })
