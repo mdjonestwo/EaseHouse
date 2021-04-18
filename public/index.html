@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body onload="getAll()">
+  <body onload="">
     <nav
       class="navbar"
       role="navigation"
@@ -649,7 +649,7 @@
           <div class="block">
             <strong>Add Details</strong>
           </div>              
-          <form action="">
+          <form class="pallet-form">
             <div class="field">
               <label>Product</label>
               <div class="control">
@@ -674,30 +674,31 @@
                       <input class="input" id="julianForm" name="julian" type="number" placeholder="ex: 321">
                     </div>
                   </div>
+                  <div class="level">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <i class="is-hidden has-text-success" id="spaceSubmitResponse">Space Submitted</i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="level">
+                    <div class="level-left">
+                      <div class="level-item">
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <button class="button" id="submitBtn" type="submit">Submit</button>
+                      </div>
+                      <div class="level-item">
+                        <button class="button" id="deleteBtn" type="button">Delete</button>
+                      </div>
+                      <div class="level-item">
+                        <button class="button" id="closeBtn" type="button">Close</button>
+                      </div>
+                    </div>
           </form>
-          <div class="level">
-            <div class="level-left">
-              <div class="level-item">
-                <i class="is-hidden has-text-success" id="spaceSubmitResponse">Space Submitted</i>
-              </div>
-            </div>
-          </div>
-          <div class="level">
-            <div class="level-left">
-              <div class="level-item">
-              </div>
-            </div>
-            <div class="level-right">
-              <div class="level-item">
-                <button class="button" id="submitBtn">Submit</button>
-              </div>
-              <div class="level-item">
-                <button class="button" id="backBtn">Back</button>
-              </div>
-              <div class="level-item">
-                <button class="button" id="closeBtn">Close</button>
-              </div>
-            </div>
+
             
           </div>
               </div>

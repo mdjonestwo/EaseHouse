@@ -36,11 +36,38 @@ module.exports = (app) => {
       });
   });
 
-  // //PUT ROUTE
-  // app.put("/api/cooler/:id", (req, res) => {
-  //   db.Pallet.findByIdAndUpdate(req.params.id,
-  //     { $set: { is_complete: false } },).then((response) => {
-  //     res.json(response);
-  //   });
-  // });
+  // DELETE ROUTE
+  app.delete("/api/cooler/:location", (req, res) => {
+    console.log("Delete");
+    db.Pallet.findOneAndDelete({ Location: req.params.location })
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
+
+  //PUT ROUTE
+  app.put("/api/cooler/:location", (req, res) => {
+    db.Pallet.findOneAndUpdate(
+      { location: req.params.id },
+      {
+        $set: {
+          Product: req.body.Product,
+          Unit: req.body.Unit,
+          Quantity: req.body.Quantity,
+          Julian: req.body.Julian,
+        },
+      },
+      { overwrite: true }
+    )
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => {
+        res.json(err);
+        console.log(err);
+      });
+  });
 };
