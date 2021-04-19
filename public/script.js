@@ -38,40 +38,40 @@ function getPallet(location) {
   });
 }
 
-// NOT WORKING YET
-// GET Pallets
-function getAll() {
-  var settings = {
-    url: "/api/cooler/",
-    method: "GET",
-  };
+// // NOT WORKING YET
+// // GET Pallets
+// function getAll() {
+//   var settings = {
+//     url: "/api/cooler/",
+//     method: "GET",
+//   };
 
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-    var allTable = $("#table td");
-    console.log(allTable);
-    // response.filter(value.Location => );
+//   $.ajax(settings).done(function (response) {
+//     console.log(response);
+//     var allTable = $("#table td");
+//     console.log(allTable);
+//     // response.filter(value.Location => );
 
-    const datamap = new Map(response.map((o) => [o.Location, o]))
+//     const datamap = new Map(response.map((o) => [o.Location, o]))
 
-    const
+//     const
 
-    // $("#table td").each(function () {
-    //   console.log($(this));
-    //   $(this)
-    //     .find("td")
-    //     .each(function () {
-    //       //do your stuff, you can use $(this) to get current cell
-    //       //console.log($(this));
-    //       var foo = $(this);
-    //       if ($(this)[0].id === oneMore) {
-    //         console.log("hey");
-    //         console.log(foo);
-    //       }
-    //     });
-    // });
-  });
-}
+//     // $("#table td").each(function () {
+//     //   console.log($(this));
+//     //   $(this)
+//     //     .find("td")
+//     //     .each(function () {
+//     //       //do your stuff, you can use $(this) to get current cell
+//     //       //console.log($(this));
+//     //       var foo = $(this);
+//     //       if ($(this)[0].id === oneMore) {
+//     //         console.log("hey");
+//     //         console.log(foo);
+//     //       }
+//     //     });
+//     // });
+//   });
+// }
 
 //DELETE Pallet
 function deletePallet(location) {
