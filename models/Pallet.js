@@ -18,6 +18,15 @@ const PalletSchema = new Schema({
   Julian: {
     type: Number,
   },
+  Filled: {
+    type: Boolean,
+    default: function () {
+      if (this.Product) {
+        return true;
+      }
+      return false;
+    },
+  },
   Location: {
     type: String,
   },

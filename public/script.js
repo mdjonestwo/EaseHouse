@@ -38,7 +38,6 @@ function getPallet(location) {
   });
 }
 
-// NOT WORKING YET
 // GET Pallets
 function getAll() {
   var settings = {
@@ -48,6 +47,20 @@ function getAll() {
 
   $.ajax(settings).done(function (response) {
     console.log(response);
+
+    var found = response
+      .filter((e) => e.Filled === true)
+      .map((e) => e.Location);
+
+    $("#table")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          console.log(this);
+          console.log("true");
+          this.classList.add("red");
+        }
+      });
   });
 }
 
@@ -112,6 +125,7 @@ $(document).ready(function () {
     console.log("form");
     const palletadd = palletFunction(id);
     add_pallet(palletadd);
+    getAll();
   });
 
   //Delete Button
