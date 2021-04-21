@@ -1,3 +1,5 @@
+//API CALLS
+
 //Adding pallet to database
 function add_pallet(pallet) {
   console.log("works");
@@ -11,7 +13,7 @@ function add_pallet(pallet) {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    return response;
   });
 }
 
@@ -46,8 +48,6 @@ function getAll() {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log(response);
-
     var found = response
       .filter((e) => e.Filled === true)
       .map((e) => e.Location);
@@ -56,8 +56,6 @@ function getAll() {
       .find("td")
       .each(function () {
         if (found.includes(this.id)) {
-          console.log(this);
-          console.log("true");
           this.classList.add("red");
         }
       });
@@ -91,10 +89,24 @@ function updatePallet(location) {
 $(document).ready(function () {
   var td = $("td");
   var palletForm = $(".pallet-form");
-  console.log(palletForm);
   var addPalletModal = $("#addPalletDescriptionModal");
   var deleteBtn = $("#deleteBtn");
   var id;
+  var farmsList = ["LA", "WO", "CO", "NU"];
+  var submitAlert = $("#spaceSubmitResponse");
+
+  //Creates farmsList drop down
+  function createFarmLis() {
+    for (i = 0; i < farmsList.length; i++) {
+      select = document.getElementById("unitForm");
+      var opt = document.createElement("option");
+      opt.value = farmsList[i];
+      opt.innerHTML = farmsList[i];
+      select.appendChild(opt);
+    }
+  }
+
+  createFarmLis();
 
   //Change selected <td> cell color to red
   $("td").click(function (ev) {
@@ -122,9 +134,15 @@ $(document).ready(function () {
   //Submit Button on addPalletDesciptionModal
   palletForm.on("submit", function (event) {
     event.preventDefault();
-    console.log("form");
+
     const palletadd = palletFunction(id);
     add_pallet(palletadd);
+    console.log(add_pallet(palletadd));
+    if (palletadd) {
+      console.log("heyhey");
+      submitAlert.removeClass("is-hidden");
+    } else {
+    }
     getAll();
   });
 

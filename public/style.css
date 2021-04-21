@@ -1,28 +1,61 @@
-td {
-    text-align: center;
-    background-color: beige;
+* {
+  font-family: var(--e-global-typography-text-font-family), Sans-serif;
 }
 
+td {
+  text-align: center;
+  background-color: beige;
+  border: 5px solid black;
+}
+
+.table thead {
+  background-color: #3cb4e5;
+}
+
+.table thead th {
+  color: white;
+}
 td:hover {
-    background-color: rgb(158, 158, 80);
-  }
+  background-color: rgb(158, 158, 80);
+}
 
-  .red {
-      background-color: red;
-  }
+.red {
+  background-color: red;
+}
 
-  .yellow{
-      background-color: yellow;
-  }
+.text-color-white a {
+  color: white;
+  font-size: small;
+}
 
-  .beige {
-    background-color: beige;
-  }
-  
-  .table{
-      margin: auto;
-  }
+.text-color-white {
+  color: white;
+}
 
-  td{
-      text-align: center;
-  }
+.text-color-blue {
+  color: #3cb4e5;
+}
+
+.menu-title-size b {
+  font-size: 36px;
+}
+
+.beige {
+  background-color: beige;
+}
+
+.table {
+  margin: auto;
+}
+
+td {
+  text-align: center;
+}
+
+.container-background {
+  background-color: #3cb4e5;
+}
+
+.box-background {
+  background-color: white;
+}

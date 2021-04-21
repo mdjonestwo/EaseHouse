@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Happy Dirt Coolers</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="./public/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body onload="getAll()">
     <nav
@@ -18,7 +18,7 @@
       <div class="navbar-brand">
         <a class="navbar-item" href="#">
           <img
-            src="./assets/imgs/happydirtlogo.jpg"
+            src="../assets/imgs/happydirtlogoblue.jpg"
             alt="Happy Dirt"
             width="112"
             height="75"
@@ -38,35 +38,35 @@
       </div>
     </nav>
 
-    <div class="container" style="max-width: 100%">
+    <div class="container container-background" style="max-width: 100%">
       <div class="columns">
         <div class="column is-2">
           <div class="menu sticky">
             <div class="media">
               <div class="media-content">
-                <p class="menu-label title is-6 pl-4 mt-3">
-                  <b>Product Storage Spaces</b>
+                <p class="menu-label menu-title-size text-color-white title is-6 pl-5 mt-3">
+                  <b>Coolers</b>
                 </p>
               </div>
             </div>
-            <ul id="menu" class="menu-list couchSurf-font">
+            <ul id="menu" class="menu-list text-color-white">
               <li>
-                <a id="dryCooler" class="dropdown-item title is-4" href="#dryCoolerLayout">
+                <a id="dryCooler" class="dropdown-item title is-3" href="#dryCoolerLayout">
                   Dry Cooler
                 </a>
               </li>
               <li>
-                <a id="wetCooler" class="dropdown-item title is-4">
+                <a id="wetCooler" class="dropdown-item title is-3">
                   Wet Cooler
                 </a>
               </li>
               <li>
-                <a id="warehouse" class="dropdown-item title is-4">
+                <a id="warehouse" class=" dropdown-item title is-3">
                   Warehouse
                 </a>
               </li>
               <li>
-                <a id="trailer" class="dropdown-item title is-4" href="#trailerLayout"> Trailer </a>
+                <a id="trailer" class="dropdown-item title is-3" href="#trailerLayout"> Trailer </a>
               </li>
             </ul>
           </div>
@@ -75,8 +75,8 @@
         <div class="column"></div>
 <!--Dry Cooler Layout-->
         <div class="column is-4">
-          <div class="box" id="dryCoolerLayout">
-            <div class="title">Dry Cooler</div>
+          <div class="box box-background" id="dryCoolerLayout">
+            <div class="title text-color-blue">Dry Cooler</div>
             <table class="table" id="table">
               <thead>
                 <th>Left</th>
@@ -657,9 +657,11 @@
               </div>
             </div>
               <div class="field">
-                <label>Unit</label>
+                <label>Farm</label>
                 <div class="control">
-                  <input class="input" id="unitForm" name="unit" type="text" placeholder="ex: 40lbs">
+                  <div class="select is-fullwidth">
+                    <select id="unitForm" name="unit" type="text" placeholder="ex: 40lbs"></select> 
+                  </div>                 
                 </div>
               </div>
                 <div class="field">
@@ -712,5 +714,5 @@
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"
   ></script>
-  <script src="./public/script.js"></script>
+  <script src="./script.js"></script>
 </html>

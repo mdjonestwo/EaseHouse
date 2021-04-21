@@ -8,15 +8,19 @@ const PalletSchema = new Schema({
   },
   Product: {
     type: String,
+    require: [true, "Select a product"],
   },
   Unit: {
     type: String,
+    require: [true, "Select a farm code"],
   },
   Quantity: {
     type: Number,
+    require: [true, "Add a quantity"],
   },
   Julian: {
     type: Number,
+    require: [true, "Add julian date"],
   },
   Filled: {
     type: Boolean,
