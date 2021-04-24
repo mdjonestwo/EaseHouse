@@ -92,7 +92,7 @@
               </tfoot>
               <tbody>
                 <tr>
-                  <td id="DC20L">DC20L</td>
+                  <td id="20L">20L</td>
                   <td><span></span></td>
                   <td><span></span></td>
                   <td id="DC20R">DC20R</td>
@@ -640,7 +640,7 @@
       </div>
     </div>
 
-    <!--Pallet Description Modal-->
+    <!--Add Palley Modal-->
     <div class="modal" id="addPalletDescriptionModal">
       <div class="modal-background"></div>
       <div class="modal-content">
@@ -699,15 +699,71 @@
                         <button class="button" id="closeBtn" type="button">Close</button>
                       </div>
                     </div>
-          </form>
-
-            
+          </form>            
           </div>
               </div>
             </div>
           </div>
       </div>
-   
+
+      <!--PALLET DESCRIPTION MODAL-->
+      <div class="modal" id="palletTableModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <table class="table" id="palletTable">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Farm</th>
+                  <th>Quantity</th>
+                  <th>Julian</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" id="closePalletTableModal"></button>
+      </div>
+
+            <!--PALLET DESCRIPTION MODAL-->
+      <div class="modal" id="palletTableModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <table class="table" id="palletTable">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Farm</th>
+                  <th>Quantity</th>
+                  <th>Julian</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" id="closePalletTableModal"></button>
+      </div>
+
+      <div class="modal" id="palletInitModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <button class="button" id="openAddModal">Add Product</button>
+            <button class="button" id="openDetailsModal">Details</button>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" id="closeInitPalletModal"></button>
+      </div>
   </body>
   <script
     src="https://code.jquery.com/jquery-3.5.1.js"

@@ -4,7 +4,7 @@ module.exports = (app) => {
   //GET ONE PALLET ROUTE
   app.get("/api/cooler/:location", (req, res) => {
     console.log("Get");
-    db.Pallet.findOne({ Location: req.params.location })
+    db.Pallet.find({ Location: req.params.location })
       .then((response) => {
         res.json(response);
       })
@@ -24,9 +24,10 @@ module.exports = (app) => {
       });
   });
 
+  //GET PRODUCTS ON A PALLET
+
   //POST ROUTE
   app.post("/api/cooler", (req, res) => {
-    console.log("hey");
     db.Pallet.create(req.body)
       .then((response) => {
         res.json(response);
@@ -37,9 +38,9 @@ module.exports = (app) => {
   });
 
   // DELETE ROUTE
-  app.delete("/api/cooler/:location", (req, res) => {
+  app.delete("/api/cooler/:id", (req, res) => {
     console.log("Delete");
-    db.Pallet.findOneAndDelete({ Location: req.params.location })
+    db.Pallet.findOneAndDelete({ _id: req.params.id })
       .then((response) => {
         res.json(response);
       })

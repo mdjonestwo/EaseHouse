@@ -1,5 +1,4 @@
 //API CALLS
-
 //Adding pallet to database
 function add_pallet(pallet) {
   console.log("works");
@@ -25,17 +24,32 @@ function getPallet(location) {
   };
 
   $.ajax(settings).done(function (response) {
-    //console.log(response.Product);
-    if (!response) {
-      $("#productForm").val("");
-      $("#unitForm").val("");
-      $("#quantityForm").val("");
-      $("#julianForm").val("");
+    console.log(response);
+    if (response) {
+      $("#palletTable tbody tr").remove();
+      console.log("hey");
+      var rows = "";
+      response.forEach(function (res) {
+        rows +=
+          "<tr id=" +
+          res._id +
+          "><td>" +
+          res.Product +
+          "</td><td>" +
+          res.Unit +
+          "</td><td>" +
+          res.Quantity +
+          "</td><td>" +
+          res.Julian +
+          "</td><td>" +
+          "<button id='deleteBtn'>" +
+          "DELETE" +
+          "</button></td></tr>";
+      });
+
+      $(rows).appendTo("#palletTable tbody");
     } else {
-      $("#productForm").val(response.Product);
-      $("#unitForm").val(response.Unit);
-      $("#quantityForm").val(response.Quantity);
-      $("#julianForm").val(response.Julian);
+      $("#palletTable tr").remove();
     }
   });
 }
@@ -63,9 +77,9 @@ function getAll() {
 }
 
 //DELETE Pallet
-function deletePallet(location) {
+function deletePallet(id) {
   var settings = {
-    url: "/api/cooler/" + location,
+    url: "/api/cooler/" + id,
     method: "DELETE",
   };
   $.ajax(settings).done(function (response) {
@@ -92,8 +106,15 @@ $(document).ready(function () {
   var addPalletModal = $("#addPalletDescriptionModal");
   var deleteBtn = $("#deleteBtn");
   var id;
-  var farmsList = ["LA", "WO", "CO", "NU"];
+  var farmsList = ["40", "LA", "WO", "CO", "NU"];
   var submitAlert = $("#spaceSubmitResponse");
+  var palletTableModal = $("#palletTableModal");
+  var palletTable = $("#palletTable");
+  var closePalletTableModal = $("#closePalletTableModal");
+  var openAddModal = $("#openAddModal");
+  var openDetailsModal = $("#openDetailsModal");
+  var palletInitModal = $("#palletInitModal");
+  var closeInitPalletModal = $("#closeInitPalletModal");
 
   //Creates farmsList drop down
   function createFarmLis() {
@@ -134,22 +155,24 @@ $(document).ready(function () {
   //Submit Button on addPalletDesciptionModal
   palletForm.on("submit", function (event) {
     event.preventDefault();
-
     const palletadd = palletFunction(id);
     add_pallet(palletadd);
-    console.log(add_pallet(palletadd));
-    if (palletadd) {
-      console.log("heyhey");
-      submitAlert.removeClass("is-hidden");
-    } else {
-    }
     getAll();
   });
 
+  //NOT WORKING
   //Delete Button
   deleteBtn.click(function () {
-    deletePallet(id);
+    console.log("yoyo");
+    //deletePallet(this.id);
+
     clearForm();
+  });
+
+  $(document).on("change", palletTable, function () {
+    $("td").click(function () {
+      console.log("yoyoyo");
+    });
   });
 
   //Close Button on addPalletDescriptionModal
@@ -170,6 +193,24 @@ $(document).ready(function () {
 
   //Open initalPalletModal
   td.click(function () {
+    palletInitModal.addClass("is-active");
+  });
+
+  closePalletTableModal.click(function () {
+    palletTableModal.removeClass("is-active");
+  });
+
+  openAddModal.click(function () {
     addPalletModal.addClass("is-active");
+    palletInitModal.removeClass("is-active");
+  });
+
+  closeInitPalletModal.click(function () {
+    palletInitModal.removeClass("is-active");
+  });
+
+  openDetailsModal.click(function () {
+    palletTableModal.addClass("is-active");
+    palletInitModal.removeClass("is-active");
   });
 });

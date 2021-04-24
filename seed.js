@@ -28,12 +28,12 @@ const data = [
       },
       {
         _id: new ObjectId(),
-        Product: "",
+        Product: "test2",
         Unit: "",
         Quantity: null,
         Julian: null,
         Filled: false,
-        Location: "19L",
+        Location: "20L",
         __v: 0,
       },
       {
