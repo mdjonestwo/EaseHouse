@@ -1,4 +1,5 @@
 //API CALLS
+
 //Adding pallet to database
 function add_pallet(pallet) {
   console.log("works");
@@ -29,24 +30,40 @@ function getPallet(location) {
       $("#palletTable tbody tr").remove();
       console.log("hey");
       var rows = "";
-      response.forEach(function (res) {
-        rows +=
-          "<tr id=" +
-          res._id +
-          "><td>" +
-          res.Product +
-          "</td><td>" +
-          res.Unit +
-          "</td><td>" +
-          res.Quantity +
-          "</td><td>" +
-          res.Julian +
-          "</td><td>" +
-          "<button id='deleteBtn'>" +
-          "DELETE" +
-          "</button></td></tr>";
-      });
-
+      // response.forEach(function (res) {
+      //   rows +=
+      //     "<tr id=" +
+      //     res._id +
+      //     "><td>" +
+      //     res.Product +
+      //     "</td><td>" +
+      //     res.Unit +
+      //     "</td><td>" +
+      //     res.Quantity +
+      //     "</td><td>" +
+      //     res.Julian +
+      //     "</td><td>" +
+      //     "<button id='deleteBtn'>" +
+      //     "DELETE" +
+      //     "</button></td></tr>";
+      for (i = 0; i < response.length; i++) {
+        var row = document.getElementById("palletTable").insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        row.setAttribute("id", response[i]._id);
+        cell1.innerHTML = response[i].Product;
+        cell2.innerHTML = response[i].Unit;
+        cell3.innerHTML = response[i].Quantity;
+        cell4.innerHTML = response[i].Julian;
+        cell5.setAttribute("id", "deletBtn");
+        cell5.innerHTML = "delete";
+        cell6.innerHTML = response[i]._id;
+      }
+      console.log(row);
       $(rows).appendTo("#palletTable tbody");
     } else {
       $("#palletTable tr").remove();
@@ -85,6 +102,8 @@ function deletePallet(id) {
   $.ajax(settings).done(function (response) {
     console.log(response);
   });
+
+  getAll();
 }
 
 //UPDATE Pallet
@@ -160,7 +179,7 @@ $(document).ready(function () {
     getAll();
   });
 
-  //NOT WORKING
+  ///////////NOT WORKING/////////
   //Delete Button
   deleteBtn.click(function () {
     console.log("yoyo");
@@ -169,11 +188,14 @@ $(document).ready(function () {
     clearForm();
   });
 
-  $(document).on("change", palletTable, function () {
-    $("td").click(function () {
-      console.log("yoyoyo");
-    });
+  $("#palletTable").on("click", "#deletBtn ", function () {
+    console.log(this.id);
+    console.log(this);
+    console.log(this.parentNode);
+    deletePallet(this.parentNode.id);
+    this.parentNode.remove();
   });
+  /////////////////////////////////
 
   //Close Button on addPalletDescriptionModal
   $("#closeBtn").click(function () {
@@ -191,7 +213,7 @@ $(document).ready(function () {
     $("#julianForm").val("");
   }
 
-  //Open initalPalletModal
+  /////////MODAL FUNCTIONALITY
   td.click(function () {
     palletInitModal.addClass("is-active");
   });
@@ -213,4 +235,5 @@ $(document).ready(function () {
     palletTableModal.addClass("is-active");
     palletInitModal.removeClass("is-active");
   });
+  /////////////////////
 });
