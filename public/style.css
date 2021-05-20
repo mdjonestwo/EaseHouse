@@ -2,10 +2,20 @@
   font-family: var(--e-global-typography-text-font-family), Sans-serif;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 td {
   text-align: center;
   background-color: beige;
   border: 5px solid black;
+  
+}
+
+.table {
+  margin: auto;
 }
 
 .table thead {
@@ -15,6 +25,7 @@ td {
 .table thead th {
   color: white;
 }
+
 td:hover {
   background-color: rgb(158, 158, 80);
 }
@@ -44,13 +55,6 @@ td:hover {
   background-color: beige;
 }
 
-.table {
-  margin: auto;
-}
-
-td {
-  text-align: center;
-}
 
 .container-background {
   background-color: #3cb4e5;
@@ -58,4 +62,53 @@ td {
 
 .box-background {
   background-color: white;
+}
+
+
+.dry-cooler{ 
+  margin-top: 50px;
+}
+
+/* =======================
+      HOME PAGE
+======================= */
+
+.login-container{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #3cb4e5;
+} 
+
+.login-container h1{
+  text-align: center;
+  font-size: 100px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  color: white
+}
+
+.login-container h3 a{
+  text-align: center;
+  font-size: 75px;
+  font-weight: 700;
+  padding-bottom: 100px;
+  color: white
+
+}
+
+.login-container h3 a:hover{
+  text-align: center;
+  font-size: 75px;
+  font-weight: 700;
+  padding-bottom: 100px;
+  color: #89DC65
+}
+
+.login-box button{ 
+  background-color: #3cb4e5;
 }

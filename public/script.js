@@ -27,9 +27,10 @@ function getPallet(location) {
   $.ajax(settings).done(function (response) {
     console.log(response);
     if (response) {
-      $("#palletTable tbody tr").remove();
+      $("#tBody").children().remove();
+      console.log($("#tBody").children());
       console.log("hey");
-      var rows = "";
+      //var rows = "";
       // response.forEach(function (res) {
       //   rows +=
       //     "<tr id=" +
@@ -61,12 +62,13 @@ function getPallet(location) {
         cell4.innerHTML = response[i].Julian;
         cell5.setAttribute("id", "deletBtn");
         cell5.innerHTML = "delete";
-        cell6.innerHTML = response[i]._id;
+        cell6.setAttribute("id", "updateBtn");
+        cell6.innerHTML = "update";
       }
       console.log(row);
-      $(rows).appendTo("#palletTable tbody");
+      //$(rows).appendTo("#palletTable tbody");
     } else {
-      $("#palletTable tr").remove();
+      $("#tBody").children().remove();
     }
   });
 }
@@ -107,9 +109,9 @@ function deletePallet(id) {
 }
 
 //UPDATE Pallet
-function updatePallet(location) {
+function updatePallet(id) {
   var settings = {
-    url: "/api/cooler/" + location,
+    url: "/api/cooler/" + id,
     method: "PUT",
   };
 
@@ -134,6 +136,9 @@ $(document).ready(function () {
   var openDetailsModal = $("#openDetailsModal");
   var palletInitModal = $("#palletInitModal");
   var closeInitPalletModal = $("#closeInitPalletModal");
+  var updateModal = $("#updatePalletDescriptionModal");
+  var closeUpdateBtn = $("#closeUpdateBtn");
+  var updateID = $("#updateID");
 
   //Creates farmsList drop down
   function createFarmLis() {
@@ -181,19 +186,21 @@ $(document).ready(function () {
 
   ///////////NOT WORKING/////////
   //Delete Button
-  deleteBtn.click(function () {
-    console.log("yoyo");
-    //deletePallet(this.id);
-
-    clearForm();
-  });
-
   $("#palletTable").on("click", "#deletBtn ", function () {
     console.log(this.id);
     console.log(this);
     console.log(this.parentNode);
     deletePallet(this.parentNode.id);
     this.parentNode.remove();
+  });
+
+  $("#palletTable").on("click", "#updateBtn ", function () {
+    console.log(this.id);
+    console.log(this);
+    console.log(this.parentNode);
+    palletTableModal.removeClass("is-active");
+    updateModal.addClass("is-active");
+    console.log(updateID);
   });
   /////////////////////////////////
 
@@ -234,6 +241,10 @@ $(document).ready(function () {
   openDetailsModal.click(function () {
     palletTableModal.addClass("is-active");
     palletInitModal.removeClass("is-active");
+  });
+
+  closeUpdateBtn.click(function () {
+    updateModal.removeClass("is-active");
   });
   /////////////////////
 });

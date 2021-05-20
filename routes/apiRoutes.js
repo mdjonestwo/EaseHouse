@@ -50,9 +50,9 @@ module.exports = (app) => {
   });
 
   //PUT ROUTE
-  app.put("/api/cooler/:location", (req, res) => {
+  app.put("/api/cooler/:id", (req, res) => {
     db.Pallet.findOneAndUpdate(
-      { location: req.params.id },
+      { _id: req.params.id },
       {
         $set: {
           Product: req.body.Product,

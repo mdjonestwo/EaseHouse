@@ -16,7 +16,7 @@
       style="height: 75"
     >
       <div class="navbar-brand">
-        <a class="navbar-item" href="#">
+        <a class="navbar-item" href="home.html">
           <img
             src="../assets/imgs/happydirtlogoblue.jpg"
             alt="Happy Dirt"
@@ -75,7 +75,7 @@
         <div class="column"></div>
 <!--Dry Cooler Layout-->
         <div class="column is-4">
-          <div class="box box-background" id="dryCoolerLayout">
+          <div class="box box-background dry-cooler" id="dryCoolerLayout">
             <div class="title text-color-blue">Dry Cooler</div>
             <table class="table" id="table">
               <thead>
@@ -705,6 +705,73 @@
             </div>
           </div>
       </div>
+    </div>
+
+        <!--Update Pallet Modal-->
+        <div class="modal" id="updatePalletDescriptionModal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box">
+              <div class="title">Pallet Space:<span>ID</span></div>
+              <div class="block">
+                <strong>Add Details</strong>
+                <p id="updateID"></p>
+              </div>              
+              <form class="pallet-form">
+                <div class="field">
+                  <label>Product</label>
+                  <div class="control">
+                    <input class="input" id="productForm" name="product" type="text" placeholder="ex: Sweet Potatoes">
+                  </div>
+                </div>
+                  <div class="field">
+                    <label>Farm</label>
+                    <div class="control">
+                      <div class="select is-fullwidth">
+                        <select id="unitForm" name="unit" type="text" placeholder="ex: 40lbs"></select> 
+                      </div>                 
+                    </div>
+                  </div>
+                    <div class="field">
+                      <label>Quantity</label>
+                      <div class="control">
+                        <input class="input" id="quantityForm" name="quantity" type="number" placeholder="ex: 56">
+                      </div>
+                    </div>
+                      <div class="field">
+                        <label>Julian</label>
+                        <div class="control">
+                          <input class="input" id="julianForm" name="julian" type="number" placeholder="ex: 321">
+                        </div>
+                      </div>
+                      <div class="level">
+                        <div class="level-left">
+                          <div class="level-item">
+                            <i class="is-hidden has-text-success" id="spaceSubmitResponse">Space Submitted</i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="level">
+                        <div class="level-left">
+                          <div class="level-item">
+                          </div>
+                        </div>
+                        <div class="level-right">
+                          <div class="level-item">
+                            <button class="button" id="submitBtn" type="submit">Update</button>
+                          </div>
+                          <div class="level-item">
+                            <button class="button" id="closeUpdateBtn" type="button">Close</button>
+                          </div>
+                        </div>
+              </form>            
+              </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    
 
       <!--PALLET DESCRIPTION MODAL-->
       <div class="modal" id="palletTableModal">
@@ -722,7 +789,7 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="tBody">
               </tbody>
             </table>
           </div>
