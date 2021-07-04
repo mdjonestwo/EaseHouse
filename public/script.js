@@ -29,7 +29,6 @@ function getPallet(location) {
     if (response) {
       $("#tBody").children().remove();
       console.log($("#tBody").children());
-      console.log("hey");
       //var rows = "";
       // response.forEach(function (res) {
       //   rows +=
@@ -47,14 +46,14 @@ function getPallet(location) {
       //     "<button id='deleteBtn'>" +
       //     "DELETE" +
       //     "</button></td></tr>";
+
       for (i = 0; i < response.length; i++) {
-        var row = document.getElementById("palletTable").insertRow(1);
+        var row = document.getElementById("tBody").insertRow(-1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
+        var cell5 = row.insertCell(4)
         row.setAttribute("id", response[i]._id);
         cell1.innerHTML = response[i].Product;
         cell2.innerHTML = response[i].Unit;
@@ -62,8 +61,7 @@ function getPallet(location) {
         cell4.innerHTML = response[i].Julian;
         cell5.setAttribute("id", "deletBtn");
         cell5.innerHTML = "delete";
-        cell6.setAttribute("id", "updateBtn");
-        cell6.innerHTML = "update";
+  
       }
       console.log(row);
       //$(rows).appendTo("#palletTable tbody");
