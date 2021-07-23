@@ -29,24 +29,6 @@ function getPallet(location) {
     if (response) {
       $("#tBody").children().remove();
       console.log($("#tBody").children());
-      //var rows = "";
-      // response.forEach(function (res) {
-      //   rows +=
-      //     "<tr id=" +
-      //     res._id +
-      //     "><td>" +
-      //     res.Product +
-      //     "</td><td>" +
-      //     res.Unit +
-      //     "</td><td>" +
-      //     res.Quantity +
-      //     "</td><td>" +
-      //     res.Julian +
-      //     "</td><td>" +
-      //     "<button id='deleteBtn'>" +
-      //     "DELETE" +
-      //     "</button></td></tr>";
-
       for (i = 0; i < response.length; i++) {
         var row = document.getElementById("tBody").insertRow(-1);
         var cell1 = row.insertCell(0);
@@ -90,6 +72,30 @@ function getAll() {
           this.classList.add("red");
         }
       });
+
+    $("#wetTable1")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          this.classList.add("red");
+        }
+      });  
+
+    $("#wetTable2")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          this.classList.add("red");
+        }
+      });    
+
+      $("#trailerTable")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          this.classList.add("red");
+        }
+      });    
   });
 }
 
@@ -106,17 +112,6 @@ function deletePallet(id) {
   getAll();
 }
 
-//UPDATE Pallet
-function updatePallet(id) {
-  var settings = {
-    url: "/api/cooler/" + id,
-    method: "PUT",
-  };
-
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-}
 
 //JQuery DOM manipulation
 $(document).ready(function () {
@@ -182,7 +177,6 @@ $(document).ready(function () {
     getAll();
   });
 
-  ///////////NOT WORKING/////////
   //Delete Button
   $("#palletTable").on("click", "#deletBtn ", function () {
     console.log(this.id);
@@ -191,16 +185,6 @@ $(document).ready(function () {
     deletePallet(this.parentNode.id);
     this.parentNode.remove();
   });
-
-  $("#palletTable").on("click", "#updateBtn ", function () {
-    console.log(this.id);
-    console.log(this);
-    console.log(this.parentNode);
-    palletTableModal.removeClass("is-active");
-    updateModal.addClass("is-active");
-    console.log(updateID);
-  });
-  /////////////////////////////////
 
   //Close Button on addPalletDescriptionModal
   $("#closeBtn").click(function () {
