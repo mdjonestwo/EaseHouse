@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EaseHouse</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="getAll()">
+
+    
+    <nav class="navbar">
+      <div class="nav-left">
+          <h4><a href="./">EaseHouse</a></h4>
+      </div>
+      <div class="nav-right">
+          <a href="/app">Application</a>
+          <a href="/about">About</a>
+          <a href="/about">Contact Us</a>
+      </div>
+      <!-- <div class="mobile-icon">
+          <i class="fas fa-bars"></i>
+      </div> -->
+    </nav>
+
+    <div class="container container-background" style="max-width: 100%">
+      <div class="columns">
+        <div class="column is-2">
+          <div class="menu sticky">
+            <div class="media">
+              <div class="media-content">
+                <p class="menu-label menu-title-size text-color-white title is-6 pl-5 mt-3">
+                  <b>Coolers</b>
+                </p>
+              </div>
+            </div>
+            <ul id="menu" class="menu-list text-color-white">
+              <li>
+                <a id="dryCooler" class="dropdown-item title is-3" href="#dryCoolerLayout">
+                  Dry Cooler
+                </a>
+              </li>
+              <li>
+                <a id="wetCooler" class="dropdown-item title is-3">
+                  Wet Cooler
+                </a>
+              </li>
+              <li>
+                <a id="warehouse" class=" dropdown-item title is-3">
+                  Warehouse
+                </a>
+              </li>
+              <li>
+                <a id="trailer" class="dropdown-item title is-3" href="#trailerLayout"> Trailer </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="column"></div>
+<!--Dry Cooler Layout-->
+        <div class="column is-4">
+          <div class="box box-background dry-cooler" id="dryCoolerLayout">
+            <div class="title text-color-blue">Dry Cooler</div>
+            <table class="table" id="table">
+              <thead>
+                <th>Left</th>
+                <th>Aisle 1</th>
+                <th>Aisle 2</th>
+                <th>Right</th>
+              </thead>
+              <tfoot>
+                <th>Left</th>
+                <th>Door</th>
+                <th>Door</th>
+                <th>Right</th>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td id="20L">20L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="DC20R">DC20R</td>
+                </tr>
+                <tr>
+                  <td id="DC19L">DC19L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="DC19R">DC19R</td>
+                </tr>
+                <tr>
+                  <td id="DC18L">DC18L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="DC18R">DC18R</td>
+                </tr>
+                <tr>
+                  <td id="17L">17L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="17R">17R</td>
+                </tr>
+                <tr>
+                  <td id="16L">16L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="16R">16R</td>
+                </tr>
+                <tr>
+                  <td id="15L">15L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="15R">15R</td>
+                </tr>
+                <tr>
+                  <td id="14L">14L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="14R">14R</td>
+                </tr>
+                <tr>
+                  <td id="13L">13L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="13R">13R</td>
+                </tr>
+                <tr>
+                  <td id="12L">12L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="12R">12R</td>
+                </tr>
+                <tr>
+                  <td id="11L">11L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="11R">11R</td>
+                </tr>
+                <tr>
+                  <td id="10L">10L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="10R">10R</td>
+                </tr>
+                <tr>
+                  <td id="9L">9L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="9R">9R</td>
+                </tr>
+                <tr>
+                  <td id="8L">8L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="8R">8R</td>
+                </tr>
+                <tr>
+                  <td id="7L">7L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="7R">7R</td>
+                </tr>
+                <tr>
+                  <td id="6L">6L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="6R">6R</td>
+                </tr>
+                <tr>
+                  <td id="5L">5L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="5R">5R</td>
+                </tr>
+                <tr>
+                  <td id="4L">4L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td id="4R">4R</td>
+                </tr>
+                <tr>
+                  <td id="3L">3L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td>3R</td>
+                </tr>
+                <tr>
+                  <td>2L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td>2R</td>
+                </tr>
+                <tr>
+                  <td>1L</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+                  <td>1R</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <!--Wet Cooler Layout-->
+          <div class="box">
+            <div class="title is-justify-content-center">Wet Cooler</div>
+            <div class="columns">
+              <div class="column"></div>
+              <div class="column-4">
+                  <table class="table">
+                      <thead>
+                        <th>Left</th>
+                        <th>Aisle 1</th>
+                        <th>Aisle 2</th>
+                        <th>Right</th>
+                      </thead>
+                      <tfoot>
+                        <th>Left</th>
+                        <th></th>
+                        <th></th>
+                        <th>Right</th>
+                      </tfoot>
+                      <tbody>
+                          <tr>
+                              <td>25L</td>
+                              <td><span></span></td>
+                              <td><span></span></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>24L</td>
+                              <td><span></span></td>
+                              <td><span></span></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>23L</td>
+                              <td><span></span></td>
+                              <td><span></span></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>22L</td>
+                              <td><span></span></td>
+                              <td><span></span></td>
+                              <td></td>
+                            </tr>
+                          <tr>
+                              <td>21L</td>
+                              <td><span></span></td>
+                              <td><span></span></td>
+                              <td></td>
+                            </tr>
+                        <tr>
+                          <td>20L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>20R</td>
+                        </tr>
+                        <tr>
+                          <td>19L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>19R</td>
+                        </tr>
+                        <tr>
+                          <td>18L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>18R</td>
+                        </tr>
+                        <tr>
+                          <td>17L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>17R</td>
+                        </tr>
+                        <tr>
+                          <td style="border-top: 1px, solid black;">16L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>16R</td>
+                        </tr>
+                        <tr>
+                          <td>15L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>15R</td>
+                        </tr>
+                        <tr>
+                          <td>14L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>14R</td>
+                        </tr>
+                        <tr>
+                          <td>13L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>13R</td>
+                        </tr>
+                        <tr>
+                          <td>12L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>12R</td>
+                        </tr>
+                        <tr>
+                          <td>11L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>10L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>9L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>8L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>8R</td>
+                        </tr>
+                        <tr>
+                          <td>7L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>7R</td>
+                        </tr>
+                        <tr>
+                          <td>6L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>6R</td>
+                        </tr>
+                        <tr>
+                          <td>5L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>5R</td>
+                        </tr>
+                        <tr>
+                          <td>4L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>4R</td>
+                        </tr>
+                        <tr>
+                          <td>3L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>3R</td>
+                        </tr>
+                        <tr>
+                          <td>2L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>2R</td>
+                        </tr>
+                        <tr>
+                          <td>1L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>1R</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class="column-4">
+                  <table class="table" id="table">
+                      <thead>
+                        <th>Left</th>
+                        <th>Aisle 1</th>
+                        <th>Aisle 2</th>
+                        <th>Right</th>
+                      </thead>
+                      <tfoot>
+                        <th>Left</th>
+                        <th>Door</th>
+                        <th>Door</th>
+                        <th>Right</th>
+                      </tfoot>
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td>15L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td>14L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td>13L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td>12L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>FHF</td>
+                        </tr>
+                        <tr>
+                          <td>11L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>Beer</td>
+                        </tr>
+                        <tr>
+                          <td>10L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>Beer</td>
+                        </tr>
+                        <tr>
+                          <td>9L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>Beer</td>
+                        </tr>
+                        <tr>
+                          <td>8L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>Beer</td>
+                        </tr>
+                        <tr>
+                          <td>7L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>Beer</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>6R</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>5R</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>4R</td>
+                        </tr>
+                        <tr>
+                          <td>3L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>3R</td>
+                        </tr>
+                        <tr>
+                          <td>2L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>2R</td>
+                        </tr>
+                        <tr>
+                          <td>1L</td>
+                          <td><span></span></td>
+                          <td><span></span></td>
+                          <td>1R</td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              <div class="column"></div>
+          </div>
+            
+          </div>
+        <!--Trailer Layout-->
+          <div class="box" id="trailerLayout">
+            <table class="table">
+              <div class="title">Trailer</div>
+              <thead>
+                <th>Left Nose</th>
+                <th>Right Nose</th>
+              </thead>
+              <tfoot>
+                <th>Left Tail</th>
+                <th>Right Tail</th>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>20L</td>
+
+                  <td>20R</td>
+                </tr>
+                <tr>
+                  <td>19L</td>
+
+                  <td>19R</td>
+                </tr>
+                <tr>
+                  <td>18L</td>
+
+                  <td>18R</td>
+                </tr>
+                <tr>
+                  <td>17L</td>
+
+                  <td>17R</td>
+                </tr>
+                <tr>
+                  <td>16L</td>
+
+                  <td>16R</td>
+                </tr>
+                <tr>
+                  <td>15L</td>
+
+                  <td>15R</td>
+                </tr>
+                <tr>
+                  <td>14L</td>
+
+                  <td>14R</td>
+                </tr>
+                <tr>
+                  <td>13L</td>
+
+                  <td>13R</td>
+                </tr>
+                <tr>
+                  <td>12L</td>
+
+                  <td>12R</td>
+                </tr>
+                <tr>
+                  <td>11L</td>
+
+                  <td>11R</td>
+                </tr>
+                <tr>
+                  <td>10L</td>
+                  <td>10R</td>
+                </tr>
+                <tr>
+                  <td>9L</td>
+                  <td>9R</td>
+                </tr>
+                <tr>
+                  <td>8L</td>
+                  <td>8R</td>
+                </tr>
+                <tr>
+                  <td>7L</td>
+                  <td>7R</td>
+                </tr>
+                <tr>
+                  <td>6L</td>
+                  <td>6R</td>
+                </tr>
+                <tr>
+                  <td>5L</td>
+                  <td>5R</td>
+                </tr>
+                <tr>
+                  <td>4L</td>
+                  <td>4R</td>
+                </tr>
+                <tr>
+                  <td>3L</td>
+                  <td>3R</td>
+                </tr>
+                <tr>
+                  <td>2L</td>
+                  <td>2R</td>
+                </tr>
+                <tr>
+                  <td>1L</td>
+                  <td>1R</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="column"></div>
+      </div>
+    </div>
+
+    <!--Add Palley Modal-->
+    <div class="modal" id="addPalletDescriptionModal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <div class="title">Pallet Space:<span>ID</span></div>
+          <div class="block">
+            <strong>Add Details</strong>
+          </div>              
+          <form class="pallet-form">
+            <div class="field">
+              <label>Product</label>
+              <div class="control">
+                <input class="input" id="productForm" name="product" type="text" placeholder="ex: Sweet Potatoes">
+              </div>
+            </div>
+              <div class="field">
+                <label>Farm</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="unitForm" name="unit" type="text" placeholder="ex: 40lbs"></select> 
+                  </div>                 
+                </div>
+              </div>
+                <div class="field">
+                  <label>Quantity</label>
+                  <div class="control">
+                    <input class="input" id="quantityForm" name="quantity" type="number" placeholder="ex: 56">
+                  </div>
+                </div>
+                  <div class="field">
+                    <label>Julian</label>
+                    <div class="control">
+                      <input class="input" id="julianForm" name="julian" type="number" placeholder="ex: 321">
+                    </div>
+                  </div>
+                  <div class="level">
+                    <div class="level-left">
+                      <div class="level-item">
+                        <i class="is-hidden has-text-success" id="spaceSubmitResponse">Space Submitted</i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="level">
+                    <div class="level-left">
+                      <div class="level-item">
+                      </div>
+                    </div>
+                    <div class="level-right">
+                      <div class="level-item">
+                        <button class="button" id="submitBtn" type="submit">Submit</button>
+                      </div>
+                      <div class="level-item">
+                        <button class="button" id="deleteBtn" type="button">Delete</button>
+                      </div>
+                      <div class="level-item">
+                        <button class="button" id="closeBtn" type="button">Close</button>
+                      </div>
+                    </div>
+          </form>            
+          </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+        <!--Update Pallet Modal-->
+        <div class="modal" id="updatePalletDescriptionModal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box">
+              <div class="title">Pallet Space:<span>ID</span></div>
+              <div class="block">
+                <strong>Add Details</strong>
+                <p id="updateID"></p>
+              </div>              
+              <form class="pallet-form">
+                <div class="field">
+                  <label>Product</label>
+                  <div class="control">
+                    <input class="input" id="productForm" name="product" type="text" placeholder="ex: Sweet Potatoes">
+                  </div>
+                </div>
+                  <div class="field">
+                    <label>Farm</label>
+                    <div class="control">
+                      <div class="select is-fullwidth">
+                        <select id="unitForm" name="unit" type="text" placeholder="ex: 40lbs"></select> 
+                      </div>                 
+                    </div>
+                  </div>
+                    <div class="field">
+                      <label>Quantity</label>
+                      <div class="control">
+                        <input class="input" id="quantityForm" name="quantity" type="number" placeholder="ex: 56">
+                      </div>
+                    </div>
+                      <div class="field">
+                        <label>Julian</label>
+                        <div class="control">
+                          <input class="input" id="julianForm" name="julian" type="number" placeholder="ex: 321">
+                        </div>
+                      </div>
+                      <div class="level">
+                        <div class="level-left">
+                          <div class="level-item">
+                            <i class="is-hidden has-text-success" id="spaceSubmitResponse">Space Submitted</i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="level">
+                        <div class="level-left">
+                          <div class="level-item">
+                          </div>
+                        </div>
+                        <div class="level-right">
+                          <div class="level-item">
+                            <button class="button" id="submitBtn" type="submit">Update</button>
+                          </div>
+                          <div class="level-item">
+                            <button class="button" id="closeUpdateBtn" type="button">Close</button>
+                          </div>
+                        </div>
+              </form>            
+              </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+    
+
+      <!--PALLET DESCRIPTION MODAL-->
+      <div class="modal" id="palletTableModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <table class="table" id="palletTable">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Farm</th>
+                  <th>Quantity</th>
+                  <th>Julian</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="tBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" id="closePalletTableModal"></button>
+      </div>
+
+            <!--PALLET DESCRIPTION MODAL-->
+      <div class="modal" id="palletTableModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <table class="table" id="palletTable">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Farm</th>
+                  <th>Quantity</th>
+                  <th>Julian</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" id="closePalletTableModal"></button>
+      </div>
+
+      <div class="modal" id="palletInitModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <!-- Any other Bulma elements you want -->
+          <div class="box">
+            <button class="button" id="openAddModal">Add Product</button>
+            <button class="button" id="openDetailsModal">Details</button>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" id="closeInitPalletModal"></button>
+      </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./script.js"></script>
+</html>
