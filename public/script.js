@@ -29,32 +29,13 @@ function getPallet(location) {
     if (response) {
       $("#tBody").children().remove();
       console.log($("#tBody").children());
-      console.log("hey");
-      //var rows = "";
-      // response.forEach(function (res) {
-      //   rows +=
-      //     "<tr id=" +
-      //     res._id +
-      //     "><td>" +
-      //     res.Product +
-      //     "</td><td>" +
-      //     res.Unit +
-      //     "</td><td>" +
-      //     res.Quantity +
-      //     "</td><td>" +
-      //     res.Julian +
-      //     "</td><td>" +
-      //     "<button id='deleteBtn'>" +
-      //     "DELETE" +
-      //     "</button></td></tr>";
       for (i = 0; i < response.length; i++) {
-        var row = document.getElementById("palletTable").insertRow(1);
+        var row = document.getElementById("tBody").insertRow(-1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
+        var cell5 = row.insertCell(4)
         row.setAttribute("id", response[i]._id);
         cell1.innerHTML = response[i].Product;
         cell2.innerHTML = response[i].Unit;
@@ -62,8 +43,7 @@ function getPallet(location) {
         cell4.innerHTML = response[i].Julian;
         cell5.setAttribute("id", "deletBtn");
         cell5.innerHTML = "delete";
-        cell6.setAttribute("id", "updateBtn");
-        cell6.innerHTML = "update";
+  
       }
       console.log(row);
       //$(rows).appendTo("#palletTable tbody");
@@ -92,6 +72,30 @@ function getAll() {
           this.classList.add("red");
         }
       });
+
+    $("#wetTable1")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          this.classList.add("red");
+        }
+      });  
+
+    $("#wetTable2")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          this.classList.add("red");
+        }
+      });    
+
+      $("#trailerTable")
+      .find("td")
+      .each(function () {
+        if (found.includes(this.id)) {
+          this.classList.add("red");
+        }
+      });    
   });
 }
 
@@ -108,17 +112,6 @@ function deletePallet(id) {
   getAll();
 }
 
-//UPDATE Pallet
-function updatePallet(id) {
-  var settings = {
-    url: "/api/cooler/" + id,
-    method: "PUT",
-  };
-
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-}
 
 //JQuery DOM manipulation
 $(document).ready(function () {
@@ -184,7 +177,6 @@ $(document).ready(function () {
     getAll();
   });
 
-  ///////////NOT WORKING/////////
   //Delete Button
   $("#palletTable").on("click", "#deletBtn ", function () {
     console.log(this.id);
@@ -193,16 +185,6 @@ $(document).ready(function () {
     deletePallet(this.parentNode.id);
     this.parentNode.remove();
   });
-
-  $("#palletTable").on("click", "#updateBtn ", function () {
-    console.log(this.id);
-    console.log(this);
-    console.log(this.parentNode);
-    palletTableModal.removeClass("is-active");
-    updateModal.addClass("is-active");
-    console.log(updateID);
-  });
-  /////////////////////////////////
 
   //Close Button on addPalletDescriptionModal
   $("#closeBtn").click(function () {
