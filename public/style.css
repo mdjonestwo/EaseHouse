@@ -191,12 +191,12 @@ a{
 
 .contact-form{
     padding: 50px 100px;
-    background-color: #DE6645;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color:black;
 }
 
 .contact-title{
@@ -254,6 +254,9 @@ a{
     align-items: flex-start;
     flex-direction: column;
 }
+.comment-box{
+    width: 420px;
+}
 
 .comment-box input{
     height: 80px;
@@ -261,7 +264,6 @@ a{
 
 .comment-box .primary-btn{
     margin-top: 30px;
-    background-color: #0062be;
 }
 
 /*//////////// JUMBO SECTION //////////////////*/
