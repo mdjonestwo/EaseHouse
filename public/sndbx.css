@@ -255,13 +255,13 @@ a{
     font-size: 26px;
 }
 
-/* REQUEST ESTIMATE */
+/* REQUEST contact */
 
-.estimate-title{
+.contact-title{
     padding-left: 40px;
 }
 
-.estimate-form{
+.contact-form{
     padding: 50px 100px;
     background-color: #a9a9a9;
     display: flex;
@@ -271,16 +271,16 @@ a{
 
 }
 
-.estimate-form p{
+.contact-form p{
     font-size: 30px;
 }
 
-.estimate-form a{
+.contact-form a{
     color: black;
     font-size: 26px;
 }
  
-.estimate-form a:hover {
+.contact-form a:hover {
     color: red;
     background-color: transparent;
     text-decoration: underline;
@@ -509,11 +509,11 @@ a{
         padding: 10px 10px;
     }
 
-    .estimate-form{
+    .contact-form{
         padding: 25px 15px;
     }
 
-    .estimate-title{
+    .contact-title{
         padding: 0;
     }
 
@@ -704,11 +704,11 @@ a{
         padding: 10px 10px;
     }
 
-    .estimate-form{
+    .contact-form{
         padding: 25px 15px;
     }
 
-    .estimate-title{
+    .contact-title{
         padding: 0;
     }
 
@@ -898,11 +898,11 @@ a{
         padding: 10px 10px;
     }
 
-    .estimate-form{
+    .contact-form{
         padding: 25px 15px;
     }
 
-    .estimate-title{
+    .contact-title{
         padding: 0;
     }
 

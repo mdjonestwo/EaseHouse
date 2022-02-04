@@ -126,7 +126,7 @@ a{
     font-weight: 100;
 }
 
-/*//////////// HEADER SECTION //////////////////*/
+/*//////////// FEATURES SECTION //////////////////*/
 
 .what{
     background-color: white;
@@ -183,4 +183,155 @@ a{
 
 .thumbnail h4{
     margin: 10px 0;
+}
+
+
+
+/*//////////// CONTACT SECTION //////////////////*/
+
+.contact-form{
+    padding: 50px 100px;
+    background-color: #DE6645;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contact-title{
+    text-align: center;
+    font-weight: 300;
+}
+
+.contact-title p{
+    font-weight: 100;
+}
+.contact-form p{
+    font-size: 20px;
+}
+
+.contact-form a{
+   
+    font-size: 18px;
+}
+ 
+
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  
+}
+
+.form label{
+    font-size: 25px;
+    font-weight: 100;
+}
+.form input{
+    width: 400px;
+    height: 25px;
+    text-align: start;
+    margin: 5px;
+}
+
+.form .col-1{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.form .col-1 input{
+    width: 90%;
+}
+
+.form-input{
+    margin: 15px 0;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.comment-box input{
+    height: 80px;
+}
+
+.comment-box .primary-btn{
+    margin-top: 30px;
+    background-color: #0062be;
+}
+
+/*//////////// JUMBO SECTION //////////////////*/
+
+.jumbo{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    text-align: center;
+    /* background-image: url("./pexels-photo-2724748.webp"); */
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.jumbo p{
+    font-size: 55px;
+}
+
+
+.jumbo-text{
+    z-index: 2;
+    width: 70%;
+    margin: auto;
+}
+
+/* /////////// FOOTER SECTION //////////// */
+.footer{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;  
+    padding: 50px 55px;
+    background-color: #DE6645;
+    color: white;
+}
+
+.footer h4{
+    font-size: 26px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 100;
+}
+.footer-left{
+    display: flex;
+}
+
+.footer-left .col{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 15px;
+}
+
+.footer h4{
+    margin-bottom: 20px;
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.footer-right a{
+    color: #0062be;
+    font-size: 18px;
+    text-decoration: underline;
 }
