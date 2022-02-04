@@ -1,1 +1,120 @@
-te
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* // X-Small devices (portrait phones, less than 576px) */
+*{
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    overflow-x:hidden;
+}
+
+h1{
+    font-size: 115px;
+}
+
+h2 {
+    font-size: 55px;
+    font-weight: 300;
+}
+
+h3{
+    font-size: 75px;
+    margin: 0;
+}
+
+.btn-box{
+    margin-top: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.primary-btn {
+    color: #fff !important;
+    padding: 10px 15px;
+    background-color: #dd5b28;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #dd5b28;
+    border-radius: 6.25rem;
+}
+
+.primary-btn:hover{
+    color: #fff !important;
+    padding: 10px 15px;
+    background-color: #e27a50;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #e27a50;
+   
+}
+
+
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    background-color:white;
+    color: black;
+    height: 80px;
+}
+
+.nav-right a{
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+}
+.nav-right .primary-btn a{
+    color: white;
+}
+
+.nav-left a{
+    color: #dd5b28;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+
+/* WHO WE ARE */
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 100px 100px;
+    background-color: #fff;
+    justify-content: center;
+
+}
+
+.header .col{
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.header-pic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-pic img{
+    height: 400px;
+    width: 600px;
+}
+
+.header-text{
+    width: 300px;
+}
+
+.header-text p{
+    font-size: 25px;
+    padding-top: 15px;
+    font-weight: 100;
+}
+
