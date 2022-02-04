@@ -38,10 +38,10 @@ a{
 .primary-btn {
     color: #fff;
     padding: 10px 15px;
-    background-color: #dd5b28;
+    background-color: #DE6645;
     text-decoration: none;
     font-size: 18px;
-    border: 2px solid #dd5b28;
+    border: 2px solid #DE6645;
     border-radius: 6.25rem;
     transition: box-shadow .3s ease;
     cursor: pointer;
@@ -82,7 +82,7 @@ a{
 }
 
 .nav-left a{
-    color: #dd5b28;
+    color: #DE6645;
     font-size: 34px;
     font-weight: 600;
 }
@@ -178,7 +178,7 @@ a{
 }
 
 .thumbnail i{
-    color: #dd5b28;
+    color: #DE6645;
 }
 
 .thumbnail h4{
