@@ -22,6 +22,10 @@ h3{
     margin: 0;
 }
 
+p{
+    font-weight: 100;
+}
+
 .btn-box{
     margin-top: 30px;
 }
@@ -32,16 +36,18 @@ a{
 }
 
 .primary-btn {
-    color: #fff !important;
+    color: #fff;
     padding: 10px 15px;
     background-color: #dd5b28;
     text-decoration: none;
     font-size: 18px;
     border: 2px solid #dd5b28;
     border-radius: 6.25rem;
+    transition: box-shadow .3s ease;
+    cursor: pointer;
 }
 
-.primary-btn:hover{
+/* .primary-btn:hover{
     color: #fff !important;
     padding: 10px 15px;
     background-color: #e27a50;
@@ -49,7 +55,8 @@ a{
     font-size: 18px;
     border: 2px solid #e27a50;
    
-}
+   
+} */
 
 
 
@@ -81,7 +88,8 @@ a{
 }
 
 
-/* WHO WE ARE */
+/*//////////// HEADER SECTION //////////////////*/
+
 .header{
     display: flex;
     flex-direction: row;
@@ -118,3 +126,61 @@ a{
     font-weight: 100;
 }
 
+/*//////////// HEADER SECTION //////////////////*/
+
+.what{
+    background-color: white;
+    padding: 100px 100px ;
+    display: flex;
+    justify-content:  center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.what-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.what-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+.what-title p{ 
+    font-size: 30px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.work-thumbnails{
+    display: flex;
+    flex-direction: row;
+    padding-top: 35px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.thumbnail{
+    width: 20%;
+    padding: 25px 45px;
+    background-color:#fff;
+    margin: 0 15px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.thumbnail i{
+    color: #dd5b28;
+}
+
+.thumbnail h4{
+    margin: 10px 0;
+}
