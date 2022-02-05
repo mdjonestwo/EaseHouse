@@ -11,7 +11,7 @@
 }
 #app aside{
     position: fixed;
-    z-index: 30;
+    z-index: 29;
 }
 
 #app .sidebar{
