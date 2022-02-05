@@ -1,9 +1,14 @@
 #app .navbar{
     background-color: rgb(209, 209, 209);
-   
     top: 0;
 }
-
+#app input{
+    height: 40px;
+    border-radius: 6.2rem;
+    font-size: 18px;
+    border: 1px solid #dbdbdb;
+    padding-left: 15px;
+}
 #app aside{
     position: fixed;
     z-index: 30;
@@ -18,11 +23,16 @@
     flex-direction: column;
     width: 200px;
     color: black;
-    padding-left: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 #app .sidebar a{
     color: black;
+}
+
+#app .sidebar a:hover{
+    background-color: #dbdbdb;
 }
 
 #app .sidebar h3{
@@ -31,13 +41,17 @@
     font-weight: 400;
 }
 
+#app .inbox-notification{
+    color: rgb(212, 8, 8);
+}
+
 #app .columns{
     display: flex;
     flex-direction: column;
     align-items: center;
     
 }
-.cooler-link-target{
+#app .cooler-link-target{
     display: block;
   margin-top: 100px;
   height: 100px;
@@ -56,3 +70,20 @@
     align-items: start;
 }
 
+#app td{
+    border: 1px solid #dbdbdb;
+    text-align: center !important;
+}
+
+#app thead{
+    text-align: center !important;
+}
+
+#app tfoot{
+    text-align: center !important;
+}
+
+#app td:hover{
+    background-color: #dbdbdb;
+    cursor: pointer;
+}
