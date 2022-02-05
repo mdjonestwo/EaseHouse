@@ -8,61 +8,75 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body onload="getAll()">
+  <body id="app" onload="getAll()">
 
     
-    <nav class="navbar">
+    <nav class="navbar is-fixed-top">
       <div class="nav-left">
           <h4><a href="./">EaseHouse</a></h4>
       </div>
       <div class="nav-right">
-          <a href="/app">Application</a>
-          <a href="/header">header</a>
+          <a href="/app">How To Video</a>
           <a href="/header">Contact Us</a>
+          <button class='primary-btn'>
+            <a  href="/coolers">Log Out</a>
+          </button>
       </div>
       <!-- <div class="mobile-icon">
           <i class="fas fa-bars"></i>
       </div> -->
     </nav>
 
-    <div class="container container-background" style="max-width: 100%">
+    <aside>
+      <nav class="sidebar bd-docs-nav">
+        <h3>Inventory</h3>
+        <a href="#dryCooler">Dry Cooler</a>
+        <a href="#wetCooler">Wet Cooler</a>
+        <a href="#trailer">Trailer</a>
+      </nav>
+    </aside>
+    <div class="container container-background" style="max-width: 100%;">
       <div class="columns">
-        <div class="column is-2">
+
+
+        <!-- <div class="sidebar column is-2 ">
           <div class="menu sticky">
             <div class="media">
               <div class="media-content">
-                <p class="menu-label menu-title-size text-color-white title is-6 pl-5 mt-3">
-                  <b>Coolers</b>
-                </p>
+                <h3 class="menu-label menu-title-size text-color-white title is-4 pl-4 mt-3">
+                  Your Company
+                </h3>
               </div>
             </div>
             <ul id="menu" class="menu-list text-color-white">
               <li>
-                <a id="dryCooler" class="dropdown-item title is-3" href="#dryCoolerLayout">
+                <a id="dryCooler" class="dropdown-item title is-4" href="#dryCoolerLayout">
                   Dry Cooler
                 </a>
               </li>
               <li>
-                <a id="wetCooler" class="dropdown-item title is-3">
+                <a id="wetCooler" class="dropdown-item title is-4">
                   Wet Cooler
                 </a>
               </li>
               <li>
-                <a id="warehouse" class=" dropdown-item title is-3">
+                <a id="warehouse" class=" dropdown-item title is-4">
                   Warehouse
                 </a>
               </li>
               <li>
-                <a id="trailer" class="dropdown-item title is-3" href="#trailerLayout"> Trailer </a>
+                <a id="trailer" class="dropdown-item title is-4" href="#trailerLayout"> Trailer </a>
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
-        <div class="column"></div>
-<!--Dry Cooler Layout-->
-        <div class="column is-4">
-          <div class="box box-background dry-cooler" id="dryCoolerLayout">
+      
+<!--Coolers-->
+      
+        <div class="column is-8" style="margin-top: 100px;">
+          <div class="cooler-link-target "id="dryCooler"></div>
+          <div class="center-table box box-background dry-cooler" id="dryCoolerLayout">
             <div class="title text-color-blue">Dry Cooler</div>
             <table class="table" id="table">
               <thead>
@@ -202,9 +216,10 @@
             </table>
           </div>
         <!--Wet Cooler Layout-->
-          <div class="box">
+          <div class="cooler-link-target "id="wetCooler"></div>
+          <div class="center-table box">
             <div class="title is-justify-content-center">Wet Cooler</div>
-            <div class="columns">
+            <div class="columns widetable">
               <div class="column"></div>
               <div class="column-4">
                   <table class="table" id="wetTable1">
@@ -517,7 +532,8 @@
             
           </div>
         <!--Trailer Layout-->
-          <div class="box" id="trailerLayout">
+        <div class="cooler-link-target "id="trailer"></div>
+          <div class="center-table box" id="trailerLayout">
             <table class="table" id="trailerTable">
               <div class="title">Trailer</div>
               <thead>
@@ -623,11 +639,11 @@
             </table>
           </div>
         </div>
-        <div class="column"></div>
+  
       </div>
     </div>
 
-    <!--Add Palley Modal-->
+    <!--Add Pallet Modal-->
     <div class="modal" id="addPalletDescriptionModal">
       <div class="modal-background"></div>
       <div class="modal-content">

@@ -1,0 +1,58 @@
+#app .navbar{
+    background-color: rgb(209, 209, 209);
+   
+    top: 0;
+}
+
+#app aside{
+    position: fixed;
+    z-index: 30;
+}
+
+#app .sidebar{
+    background-color: rgb(209, 209, 209);
+    position: relative;
+    height: 100vh;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    color: black;
+    padding-left: 40px;
+}
+
+#app .sidebar a{
+    color: black;
+}
+
+#app .sidebar h3{
+    font-size: 24px;
+    color: black;
+    font-weight: 400;
+}
+
+#app .columns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.cooler-link-target{
+    display: block;
+  margin-top: 100px;
+  height: 100px;
+}
+
+#app .center-table{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 200px;
+}
+
+#app .widetable{
+    flex-direction: row !important;
+    align-items: start;
+}
+
