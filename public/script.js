@@ -36,14 +36,18 @@ function getPallet(location) {
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4)
+        // var cell6 = row.insertCell(5);
         row.setAttribute("id", response[i]._id);
         cell1.innerHTML = response[i].Product;
         cell2.innerHTML = response[i].Unit;
         cell3.innerHTML = response[i].Quantity;
         cell4.innerHTML = response[i].Julian;
         cell5.setAttribute("id", "deletBtn");
+        cell5.setAttribute("class", "occupied")
         cell5.innerHTML = "delete";
-  
+        // cell6.setAttribute("id", "updateBtn");
+        // cell6.setAttribute("class", "occupied")
+        // cell6.innerHTML = "update";
       }
       console.log(row);
       //$(rows).appendTo("#palletTable tbody");
@@ -69,7 +73,7 @@ function getAll() {
       .find("td")
       .each(function () {
         if (found.includes(this.id)) {
-          this.classList.add("red");
+          this.classList.add("occupied");
         }
       });
 
@@ -77,7 +81,7 @@ function getAll() {
       .find("td")
       .each(function () {
         if (found.includes(this.id)) {
-          this.classList.add("red");
+          this.classList.add("occupied");
         }
       });  
 
@@ -85,7 +89,7 @@ function getAll() {
       .find("td")
       .each(function () {
         if (found.includes(this.id)) {
-          this.classList.add("red");
+          this.classList.add("occupied");
         }
       });    
 
@@ -93,7 +97,7 @@ function getAll() {
       .find("td")
       .each(function () {
         if (found.includes(this.id)) {
-          this.classList.add("red");
+          this.classList.add("occupied");
         }
       });    
   });
@@ -112,6 +116,17 @@ function deletePallet(id) {
   getAll();
 }
 
+// //UPDATE Pallet
+// function updatePallet(id) {
+//   var settings = {
+//     url: "/api/cooler/" + id,
+//     method: "PUT",
+//   };
+
+//   $.ajax(settings).done(function (response) {
+//     console.log(response);
+//   });
+// }
 
 //JQuery DOM manipulation
 $(document).ready(function () {
@@ -146,7 +161,7 @@ $(document).ready(function () {
 
   createFarmLis();
 
-  //Change selected <td> cell color to red
+  //Change selected <td> cell color to occupied
   $("td").click(function (ev) {
     console.log($(this));
     const locationTxt = $(this).text();
@@ -185,6 +200,16 @@ $(document).ready(function () {
     deletePallet(this.parentNode.id);
     this.parentNode.remove();
   });
+
+  // //Update button
+  // $("#palletTable").on("click", "#updateBtn ", function () {
+  //   console.log(this.id);
+  //   console.log(this);
+  //   console.log(this.parentNode);
+  //   palletTableModal.removeClass("is-active");
+  //   updateModal.addClass("is-active");
+  //   console.log(updateID);
+  // });
 
   //Close Button on addPalletDescriptionModal
   $("#closeBtn").click(function () {
@@ -225,8 +250,10 @@ $(document).ready(function () {
     palletInitModal.removeClass("is-active");
   });
 
-  closeUpdateBtn.click(function () {
-    updateModal.removeClass("is-active");
-  });
+  // closeUpdateBtn.click(function () {
+  //   updateModal.removeClass("is-active");
+  // });
+
+
   /////////////////////
 });

@@ -12,17 +12,24 @@
   <body id="app" onload="getAll()">
 
     
+    
     <nav class="navbar is-fixed-top">
-      <div class="nav-left">
+      <div class="warning-test">
+        <p>WARNING: This application is still in its beta version and is for portfolio purposes only. To learn more click <a href="">here</a></p>
+      </div>
+      <div class="real-nav">
+        <div class="nav-left">
           <h4><a href="./">EaseHouse</a></h4>
       </div>
       <div class="nav-right">
         <input type="text" id="fname" name="fname" placeholder="Search for product or date"> 
-        <a href="">Inbox<span class="inbox-notification"> (3)</span></a>
+        <a href="">Inbox  <span class="inbox-notification">3</span></a>
         <a href="">Send Message</a>
         <a href="">Bulletin Board</a>
         <a  href="/index">Log Out</a>
       </div>
+      </div>
+  
       <!-- <div class="mobile-icon">
           <i class="fas fa-bars"></i>
       </div> -->
@@ -846,12 +853,13 @@
         <div class="modal-background"></div>
         <div class="modal-content">
           <!-- Any other Bulma elements you want -->
+          <button class="modal-close is-large" aria-label="close" id="closeInitPalletModal"></button>
           <div class="box">
             <button class="button" id="openAddModal">Add Product</button>
             <button class="button" id="openDetailsModal">Details</button>
           </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" id="closeInitPalletModal"></button>
+      
       </div>
   </body>
   <script

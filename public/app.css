@@ -1,7 +1,27 @@
 #app .navbar{
     background-color: rgb(209, 209, 209);
-    top: 0;
+    top: 1;
 }
+
+ .warning-test{
+    background-color: red;
+    color: white;
+    z-index: 31;
+    height: 25px;
+    padding: 3px;
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
+.warning-test a{
+    text-decoration: underline;
+    font-weight: 600;
+}
+
 #app input{
     height: 40px;
     border-radius: 6.2rem;
@@ -42,7 +62,13 @@
 }
 
 #app .inbox-notification{
-    color: rgb(212, 8, 8);
+    color: white;
+    font-weight: 600;
+    background-color: red;
+    position: absolute;
+    padding: 1px 2px;
+    border-radius: 3px;
+    font-size: 12px;
 }
 
 #app .columns{
@@ -87,3 +113,14 @@
     background-color: #dbdbdb;
     cursor: pointer;
 }
+
+#app .occupied{
+    background-color: #DE6645;
+    color: white;
+}
+
+#app .occupied:hover{
+    background-color: #c44825;
+    color: white;
+}
+
