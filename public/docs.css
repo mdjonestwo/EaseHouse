@@ -1,0 +1,26 @@
+.wrapper{
+    padding: 90px 250px;
+}
+
+.wrapper p{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.wrapper h2{
+    margin-top: 45px;
+}
+
+.wrapper .contact {
+    color: #DE6645;
+    text-decoration: underline;
+}
+.video{
+    margin-top: 100px;
+}
+
+.vid-box{
+    height: 400px;
+    width: 700px;
+    background-color: #797979;
+}
