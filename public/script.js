@@ -135,7 +135,7 @@ $(document).ready(function () {
   var addPalletModal = $("#addPalletDescriptionModal");
   var deleteBtn = $("#deleteBtn");
   var id;
-  var farmsList = ["40", "LA", "WO", "CO", "NU"];
+  var farmsList = ["UH", "LA", "WO", "CO", "NU"];
   var submitAlert = $("#spaceSubmitResponse");
   var palletTableModal = $("#palletTableModal");
   var palletTable = $("#palletTable");
