@@ -20,11 +20,6 @@ mongoose.connect('mongodb://127.0.0.1/happydirtdb', { useNewUrlParser: true, use
     console.log("Not Connected to Database ERROR! ", err);
 });
 
-// mongoose.connect("mongodb://localhost/happydirtdb", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-//   console.log("Connected to Database");
-//   }).catch((err) => {
-//       console.log("Not Connected to Database ERROR! ", err);
-//   });
 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
