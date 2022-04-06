@@ -14,12 +14,17 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/happydirtdb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
+mongoose.connect('mongodb://127.0.0.1/happydirtdb', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+  console.log("Connected to Database");
+}).catch((err) => {
+    console.log("Not Connected to Database ERROR! ", err);
 });
+
+// mongoose.connect("mongodb://localhost/happydirtdb", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+//   console.log("Connected to Database");
+//   }).catch((err) => {
+//       console.log("Not Connected to Database ERROR! ", err);
+//   });
 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
