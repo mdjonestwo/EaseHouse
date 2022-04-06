@@ -14,7 +14,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://127.0.0.1/happydirtdb', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+
+
+mongoose.connect(proccess.env.MONGODB_URI || 'mongodb://127.0.0.1/happydirtdb', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log("Connected to Database");
 }).catch((err) => {
     console.log("Not Connected to Database ERROR! ", err);
