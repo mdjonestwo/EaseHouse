@@ -1,7 +1,8 @@
 const db = require("../models");
 
+
 module.exports = (app) => {
-  //GET ONE PALLET ROUTE
+  // ********************** Product and Pallet API Routes **********************
   app.get("/api/cooler/:location", (req, res) => {
     console.log("Get");
     db.Pallet.find({ Location: req.params.location })
@@ -12,6 +13,21 @@ module.exports = (app) => {
         res.json(err);
       });
   });
+
+
+  app.get("/api/cooler/update/:id", (req, res) => {
+    console.log("Get UPDATE");
+    db.Pallet.findById({ _id: req.params.id})
+      .then((response) => {
+        res.json(response);
+
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+    
+  });
+
 
   //GET ALL PALLETS ROUTE
   app.get("/api/cooler/", (req, res) => {
@@ -50,7 +66,7 @@ module.exports = (app) => {
   });
 
   //PUT ROUTE
-  app.put("/api/cooler/:id", (req, res) => {
+  app.put("/api/cooler/update/:id", (req, res) => {
     db.Pallet.findOneAndUpdate(
       { _id: req.params.id },
       {
@@ -61,14 +77,26 @@ module.exports = (app) => {
           Julian: req.body.Julian,
         },
       },
-      { overwrite: true }
+      { new: true }
     )
+      .then((response) => {
+        res.json(response);
+        console.log("go to bed" + response)
+      })
+      .catch((err) => {
+        res.json(err);
+        console.log(err);
+      });
+  });
+
+  // ********************** User API Routes **********************
+  app.get("/api/users", (req, res) => {
+    db.User.find()
       .then((response) => {
         res.json(response);
       })
       .catch((err) => {
         res.json(err);
-        console.log(err);
       });
   });
 };

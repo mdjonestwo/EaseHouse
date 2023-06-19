@@ -1,5 +1,5 @@
 {
-  "name": "happy-dirt-cooler-",
+  "name": "EaseHouse",
   "version": "1.0.0",
   "description": "",
   "main": "controller.js",
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mdjonestwo/Happy-Dirt-Cooler-.git"
+    "url": "https://github.com/mdjonestwo/EaseHouse"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mdjonestwo/Happy-Dirt-Cooler-/issues"
+    "url": "https://github.com/mdjonestwo/EaseHouse/issues"
   },
-  "homepage": "https://github.com/mdjonestwo/Happy-Dirt-Cooler-#readme"
+  "homepage": "https://github.com/mdjonestwo/EaseHouse#readme"
 }

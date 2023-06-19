@@ -739,36 +739,36 @@
           <div class="modal-background"></div>
           <div class="modal-content">
             <div class="box">
-              <div class="title">Pallet Space:<span>ID</span></div>
+              <div class="title">Palletta Space:<span>ID</span></div>
               <div class="block">
                 <strong>Add Details</strong>
                 <p id="updateID"></p>
               </div>              
-              <form class="pallet-form">
+              <form class="update-form">
                 <div class="field">
                   <label>Product</label>
                   <div class="control">
-                    <input class="input" id="productForm" name="product" type="text" placeholder="ex: Sweet Potatoes">
+                    <input class="input" id="productUpdateForm" name="product" type="text" placeholder="ex: Sweet Potatoes">
                   </div>
                 </div>
                   <div class="field">
                     <label>Farm</label>
                     <div class="control">
                       <div class="select is-fullwidth">
-                        <select id="unitForm" name="unit" type="text" placeholder="ex: 40lbs"></select> 
+                        <select id="unitUpdateForm" name="unit" type="text" placeholder="ex: 40lbs"></select> 
                       </div>                 
                     </div>
                   </div>
                     <div class="field">
                       <label>Quantity</label>
                       <div class="control">
-                        <input class="input" id="quantityForm" name="quantity" type="number" placeholder="ex: 56">
+                        <input class="input" id="quantityUpdateForm" name="quantity" type="number" placeholder="ex: 56">
                       </div>
                     </div>
                       <div class="field">
                         <label>Julian</label>
                         <div class="control">
-                          <input class="input" id="julianForm" name="julian" type="number" placeholder="ex: 321">
+                          <input class="input" id="julianUpdateForm" name="julian" type="number" placeholder="ex: 321">
                         </div>
                       </div>
                       <div class="level">
@@ -785,7 +785,7 @@
                         </div>
                         <div class="level-right">
                           <div class="level-item">
-                            <button class="button" id="submitBtn" type="submit">Update</button>
+                            <button class="button" id="updateFormBtn" type="button" >Update</button>
                           </div>
                           <div class="level-item">
                             <button class="button" id="closeUpdateBtn" type="button">Close</button>
@@ -857,6 +857,7 @@
           <div class="box">
             <button class="button" id="openAddModal">Add Product</button>
             <button class="button" id="openDetailsModal">Details</button>
+          
           </div>
         </div>
       

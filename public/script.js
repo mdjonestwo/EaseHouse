@@ -1,6 +1,7 @@
-//API CALLS
+//*************** API CALLS ***************
 
-//Adding pallet to database
+
+//Adding product to a pallet
 function add_pallet(pallet) {
   console.log("works");
   var settings = {
@@ -17,7 +18,7 @@ function add_pallet(pallet) {
   });
 }
 
-//GET pallet
+//Get products from pallet location
 function getPallet(location) {
   var settings = {
     url: "/api/cooler/" + location,
@@ -25,29 +26,31 @@ function getPallet(location) {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    console.log( response);
     if (response) {
       $("#tBody").children().remove();
       console.log($("#tBody").children());
       for (i = 0; i < response.length; i++) {
+        
         var row = document.getElementById("tBody").insertRow(-1);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4)
-        // var cell6 = row.insertCell(5);
+        var cell6 = row.insertCell(5);
         row.setAttribute("id", response[i]._id);
         cell1.innerHTML = response[i].Product;
+        console.log(response[i]._id)
         cell2.innerHTML = response[i].Unit;
         cell3.innerHTML = response[i].Quantity;
         cell4.innerHTML = response[i].Julian;
         cell5.setAttribute("id", "deletBtn");
         cell5.setAttribute("class", "occupied")
         cell5.innerHTML = "delete";
-        // cell6.setAttribute("id", "updateBtn");
-        // cell6.setAttribute("class", "occupied")
-        // cell6.innerHTML = "update";
+        cell6.setAttribute("id", "updateBtn");
+        cell6.setAttribute("class", "occupied")
+        cell6.innerHTML = "update";
       }
       console.log(row);
       //$(rows).appendTo("#palletTable tbody");
@@ -57,7 +60,22 @@ function getPallet(location) {
   });
 }
 
-// GET Pallets
+//Get product data onto form fields 
+function getPalletForm(id) {
+  var settings = {
+    url: "/api/cooler/update/" + id,
+    method: "GET",
+  };
+  $.ajax(settings).done(function (response) {
+    console.log(response.Product);
+    $("#productUpdateForm").val(response.Product)
+    $("#unitUpdateForm").val(response.Unit)
+    $("#quantityUpdateForm").val(response.Quantity)
+    $("#julianUpdateForm").val(response.Julian)
+  })
+}
+
+//Get all products in pallet spaces 
 function getAll() {
   var settings = {
     url: "/api/cooler/",
@@ -103,7 +121,7 @@ function getAll() {
   });
 }
 
-//DELETE Pallet
+//DELETE single product 
 function deletePallet(id) {
   var settings = {
     url: "/api/cooler/" + id,
@@ -116,17 +134,29 @@ function deletePallet(id) {
   getAll();
 }
 
-// //UPDATE Pallet
-// function updatePallet(id) {
-//   var settings = {
-//     url: "/api/cooler/" + id,
-//     method: "PUT",
-//   };
+//UPDATE product data on pallet
+function updatePallet(id) {
+  var settings = {
+    url: "/api/cooler/update/" + id,
+    method: "PUT",
+    timeout: 0,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    data: JSON.stringify({
+      "Product": $("#productUpdateForm").val(),
+      "Unit": $("#unitUpdateForm").val(),
+      "Quantity": $("#quantityUpdateForm").val(),
+      "Julian":  $("#julianUpdateForm").val()
+    }),
+  };
+  
 
-//   $.ajax(settings).done(function (response) {
-//     console.log(response);
-//   });
-// }
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  
+  });
+}
 
 //JQuery DOM manipulation
 $(document).ready(function () {
@@ -146,9 +176,11 @@ $(document).ready(function () {
   var closeInitPalletModal = $("#closeInitPalletModal");
   var updateModal = $("#updatePalletDescriptionModal");
   var closeUpdateBtn = $("#closeUpdateBtn");
-  var updateID = $("#updateID");
+  let updateID = ""
+  const updateForm = $(".update-Form")
+  const updateFormBtn = $("#updateFormBtn")
 
-  //Creates farmsList drop down
+  //Creates farmsList drop down for adding pallets
   function createFarmLis() {
     for (i = 0; i < farmsList.length; i++) {
       select = document.getElementById("unitForm");
@@ -158,8 +190,19 @@ $(document).ready(function () {
       select.appendChild(opt);
     }
   }
-
   createFarmLis();
+
+ //Creates farmsList drop down for updating pallets
+  function createUpdateFarmLis() {
+    for (i = 0; i < farmsList.length; i++) {
+      select = document.getElementById("unitUpdateForm");
+      var opt = document.createElement("option");
+      opt.value = farmsList[i];
+      opt.innerHTML = farmsList[i];
+      select.appendChild(opt);
+    }
+  }
+  createUpdateFarmLis();
 
   //Change selected <td> cell color to occupied
   $("td").click(function (ev) {
@@ -195,21 +238,33 @@ $(document).ready(function () {
   //Delete Button
   $("#palletTable").on("click", "#deletBtn ", function () {
     console.log(this.id);
-    console.log(this);
+    console.log(this)
     console.log(this.parentNode);
     deletePallet(this.parentNode.id);
     this.parentNode.remove();
   });
+  
+  //Update button 
+  $("#palletTable").on("click", "#updateBtn ", function () {
+    console.log(this.id);
+    console.log(this);
+    console.log(this.parentNode.id);
+    let updateID = this.parentNode.id
+    palletTableModal.removeClass("is-active");
+    updateModal.addClass("is-active");
+    console.log(updateID);
+    getPalletForm(updateID)
 
-  // //Update button
-  // $("#palletTable").on("click", "#updateBtn ", function () {
-  //   console.log(this.id);
-  //   console.log(this);
-  //   console.log(this.parentNode);
-  //   palletTableModal.removeClass("is-active");
-  //   updateModal.addClass("is-active");
-  //   console.log(updateID);
-  // });
+       //Submit Button on updatePalletDesciptionModal
+  updateFormBtn.click(function () {
+    console.log("Bloop: " + updateID)
+    updatePallet(updateID)
+  })
+
+  });
+
+
+
 
   //Close Button on addPalletDescriptionModal
   $("#closeBtn").click(function () {
@@ -250,9 +305,9 @@ $(document).ready(function () {
     palletInitModal.removeClass("is-active");
   });
 
-  // closeUpdateBtn.click(function () {
-  //   updateModal.removeClass("is-active");
-  // });
+  closeUpdateBtn.click(function () {
+    updateModal.removeClass("is-active");
+  });
 
 
   /////////////////////
