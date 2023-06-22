@@ -87,6 +87,7 @@ a{
     justify-content: space-between;
     align-items: center;
     padding: 5px 35px;
+    background-color: white;
 }
 
 .nav-right a{

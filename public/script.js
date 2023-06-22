@@ -77,12 +77,15 @@ function getPalletForm(id) {
 
 //Get all products in pallet spaces 
 function getAll() {
+  
+
   var settings = {
     url: "/api/cooler/",
     method: "GET",
   };
-
+console.log(settings)
   $.ajax(settings).done(function (response) {
+    console.log(response)
     var found = response
       .filter((e) => e.Filled === true)
       .map((e) => e.Location);
@@ -90,6 +93,7 @@ function getAll() {
     $("#table")
       .find("td")
       .each(function () {
+        
         if (found.includes(this.id)) {
           this.classList.add("occupied");
         }

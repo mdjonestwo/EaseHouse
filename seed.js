@@ -38,7 +38,7 @@ const data = [
       },
       {
         _id: new ObjectId(),
-        Product: "",
+        Product: "test",
         Unit: "",
         Quantity: null,
         Julian: null,

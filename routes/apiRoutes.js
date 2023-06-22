@@ -1,9 +1,32 @@
+const express = require("express");
+const router = express.Router();
 const db = require("../models");
 
+  // Add Pallet to db
+  router.post("/cooler", (req, res) => {
+    db.Pallet.create(req.body)
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
 
-module.exports = (app) => {
-  // ********************** Product and Pallet API Routes **********************
-  app.get("/api/cooler/:location", (req, res) => {
+  //Get all pallets in db
+  router.get("/cooler/", (req, res) => {
+    console.log(res)
+    db.Pallet.find({})
+    .then((response) => {
+      res.json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+  });
+
+  //Get specific pallet from db
+  router.get("/cooler/:location", (req, res) => {
     console.log("Get");
     db.Pallet.find({ Location: req.params.location })
       .then((response) => {
@@ -14,8 +37,8 @@ module.exports = (app) => {
       });
   });
 
-
-  app.get("/api/cooler/update/:id", (req, res) => {
+  //Get specific pallet for updating
+  router.get("/cooler/update/:id", (req, res) => {
     console.log("Get UPDATE");
     db.Pallet.findById({ _id: req.params.id})
       .then((response) => {
@@ -28,45 +51,8 @@ module.exports = (app) => {
     
   });
 
-
-  //GET ALL PALLETS ROUTE
-  app.get("/api/cooler/", (req, res) => {
-    db.Pallet.find()
-      .then((response) => {
-        res.json(response);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
-
-  //GET PRODUCTS ON A PALLET
-
-  //POST ROUTE
-  app.post("/api/cooler", (req, res) => {
-    db.Pallet.create(req.body)
-      .then((response) => {
-        res.json(response);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
-
-  // DELETE ROUTE
-  app.delete("/api/cooler/:id", (req, res) => {
-    console.log("Delete");
-    db.Pallet.findOneAndDelete({ _id: req.params.id })
-      .then((response) => {
-        res.json(response);
-      })
-      .catch((err) => {
-        res.json(err);
-      });
-  });
-
-  //PUT ROUTE
-  app.put("/api/cooler/update/:id", (req, res) => {
+  //Update specific pallet
+  router.put("/cooler/update/:id", (req, res) => {
     db.Pallet.findOneAndUpdate(
       { _id: req.params.id },
       {
@@ -89,9 +75,10 @@ module.exports = (app) => {
       });
   });
 
-  // ********************** User API Routes **********************
-  app.get("/api/users", (req, res) => {
-    db.User.find()
+  // Delete pallet
+  router.delete("/cooler/:id", (req, res) => {
+    console.log("Delete");
+    db.Pallet.findOneAndDelete({ _id: req.params.id })
       .then((response) => {
         res.json(response);
       })
@@ -99,4 +86,16 @@ module.exports = (app) => {
         res.json(err);
       });
   });
-};
+  
+  // ********************** User API Routes **********************
+  // router.get("/users", (req, res) => {
+  //   db.User.find()
+  //     .then((response) => {
+  //       res.json(response);
+  //     })
+  //     .catch((err) => {
+  //       res.json(err);
+  //     });
+  // });
+
+module.exports = router; 
